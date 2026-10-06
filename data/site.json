@@ -1,0 +1,1093 @@
+{
+  "CyberVault": {
+    "templateComponents": {
+      "template-1": {
+        "shared": {
+          "topbar": "CyberVaultTopbar1",
+          "navbar": "CyberVaultNavbar1",
+          "footer": "CyberVaultFooter1"
+        },
+        "pages": {
+          "home": {
+            "components": [
+              {
+                "key": "hero",
+                "component": "CyberVaultHero1"
+              },
+              {
+                "key": "about",
+                "component": "CyberVaultAbout1"
+              },
+              {
+                "key": "ourImpact",
+                "component": "CyberVaultOurImpact1"
+              },
+              {
+                "key": "services",
+                "component": "CyberVaultServices1"
+              },
+              {
+                "key": "process",
+                "component": "CyberVaultProcess1"
+              },
+              {
+                "key": "whyChooseUs",
+                "component": "CyberVaultWhyChooseUs1"
+              },
+              {
+                "key": "testimonial",
+                "component": "CyberVaultTestimonial1"
+              },
+              {
+                "key": "blog",
+                "component": "CyberVaultBlog1"
+              }
+            ]
+          },
+          "about": {
+            "components": [
+              {
+                "key": "pageTopSection",
+                "component": "CyberVaultPageTop1"
+              },
+              {
+                "key": "about",
+                "component": "CyberVaultAbout1"
+              },
+              {
+                "key": "whyChooseUs",
+                "component": "CyberVaultWhyChooseUs1"
+              },
+              {
+                "key": "ourImpact",
+                "component": "CyberVaultOurImpact1"
+              },
+              {
+                "key": "testimonial",
+                "component": "CyberVaultTestimonial1"
+              }
+            ]
+          },
+          "services": {
+            "components": [
+              {
+                "key": "pageTopSection",
+                "component": "CyberVaultPageTop1"
+              },
+              {
+                "key": "services",
+                "component": "CyberVaultServices1"
+              }
+            ]
+          },
+          "portfolio": {
+            "components": [
+              {
+                "key": "pageTopSection",
+                "component": "CyberVaultPageTop1"
+              },
+              {
+                "key": "portfolio",
+                "component": "CyberVaultPortfolio1"
+              }
+            ]
+          },
+          "blog": {
+            "components": [
+              {
+                "key": "pageTopSection",
+                "component": "CyberVaultPageTop1"
+              },
+              {
+                "key": "blog",
+                "component": "CyberVaultBlog1"
+              }
+            ]
+          },
+          "contact": {
+            "components": [
+              {
+                "key": "pageTopSection",
+                "component": "CyberVaultPageTop1"
+              },
+              {
+                "key": "contact",
+                "component": "CyberVaultContact1"
+              }
+            ]
+          },
+          "get-a-quote": {
+            "components": [
+              {
+                "key": "pageTopSection",
+                "component": "CyberVaultPageTop1"
+              },
+              {
+                "key": "getAQuote",
+                "component": "CyberVaultGetAQuote1"
+              }
+            ]
+          },
+          "thank-you": {
+            "components": [
+              {
+                "key": "pageTopSection",
+                "component": "CyberVaultPageTop1"
+              },
+              {
+                "key": "thankYou",
+                "component": "CyberVaultThankYou1"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "sections": {
+      "topbar": {
+        "variants": {
+          "CyberVaultTopbar1": {
+            "notification": {
+              "icon": "ShieldCheck",
+              "text": "We are always ready to protect your digital world.",
+              "link": {
+                "label": "Contact Now",
+                "href": "/contact"
+              }
+            },
+            "contact": {
+              "email": "info@xyz.com",
+              "emailIcon": "Mail"
+            },
+            "socialLinks": [
+              {
+                "name": "Twitter",
+                "icon": "BsTwitter",
+                "href": "https://twitter.com",
+                "color": "#38bdf8"
+              },
+              {
+                "name": "Facebook",
+                "icon": "FaFacebook",
+                "href": "https://facebook.com",
+                "color": "#60a5fa"
+              },
+              {
+                "name": "LinkedIn",
+                "icon": "LiaLinkedin",
+                "href": "https://linkedin.com",
+                "color": "#38bdf8"
+              },
+              {
+                "name": "Instagram",
+                "icon": "BsInstagram",
+                "href": "https://instagram.com",
+                "color": "#f472b6"
+              }
+            ]
+          }
+        }
+      },
+      "navbar": {
+        "variants": {
+          "CyberVaultNavbar1": {
+            "logo": {
+              "src": "/logo/logo-black.png",
+              "alt": "CyberVault Logo",
+              "width": 220,
+              "height": 220,
+              "href": "/"
+            },
+            "navItems": [
+              {
+                "label": "Home",
+                "href": "/",
+                "icon": "Home"
+              },
+              {
+                "label": "About Us",
+                "href": "/about",
+                "icon": "Info"
+              },
+              {
+                "label": "Services",
+                "href": "/services",
+                "icon": "Wrench"
+              },
+              {
+                "label": "Portfolio",
+                "href": "/portfolio",
+                "icon": "Briefcase"
+              },
+              {
+                "label": "Blogs",
+                "href": "/blog",
+                "icon": "BookOpen"
+              },
+              {
+                "label": "Contact Us",
+                "href": "/contact",
+                "icon": "Mail"
+              }
+            ],
+            "actionButton": {
+              "label": "Enquire Now",
+              "href": "/get-a-quote",
+              "icon": "ArrowRight"
+            }
+          }
+        }
+      },
+      "hero": {
+        "variants": {
+          "CyberVaultHero1": {
+            "backgroundImage": {
+              "src": "/images/hero-banner-1.png",
+              "alt": "Cyber Security Hero Banner"
+            },
+            "badge": {
+              "icon": "Zap",
+              "text": "WELCOME TO CYBERVAULT"
+            },
+            "title": {
+              "prefix": "Your Partner in Total",
+              "highlight": "Cyber Security"
+            },
+            "description": "Protect your business from digital threats with cutting-edge cybersecurity solutions—24/7 monitoring, penetration testing, and expert-driven defense strategies.",
+            "ctaButton": {
+              "label": "Enquire Now",
+              "href": "/get-a-quote",
+              "icon": "ArrowRight"
+            },
+            "trustBar": {
+              "ratingLabel": "Google Rating",
+              "score": "5.0",
+              "starsCount": 5,
+              "reviewPrefix": "Based on",
+              "reviewsCount": "23k Reviews"
+            },
+            "floatingStats": [
+              {
+                "icon": "FaShieldAlt",
+                "value": "99.9%",
+                "label": "Threat Intercept"
+              },
+              {
+                "icon": "FaUserFriends",
+                "value": "23K",
+                "label": "Happy Customers"
+              }
+            ]
+          }
+        }
+      },
+      "about": {
+        "variants": {
+          "CyberVaultAbout1": {
+            "tagline": "ABOUT US",
+            "title": {
+              "prefix": "Delivering end to end",
+              "highlight": "cyber security",
+              "suffix": "for businesses"
+            },
+            "description": "We provide advanced cybersecurity solutions to protect your business from evolving digital threats. Our focus is on securing your data, systems, and networks with proactive strategies, innovative technology, and expert support.",
+            "images": {
+              "primary": {
+                "src": "/images/about-1.jpg",
+                "alt": "Cyber Security Operations Center Room"
+              },
+              "secondary": {
+                "src": "/images/about-2.jpg",
+                "alt": "Security Team Collaborating"
+              }
+            },
+            "experienceBadge": {
+              "icon": "ShieldCheck",
+              "years": "25+",
+              "label": "Years Of Experience"
+            },
+            "features": [
+              {
+                "icon": "ShieldCheck",
+                "title": "Proactive Threat Protection",
+                "description": "Detect and prevent threats before they impact your business."
+              },
+              {
+                "icon": "Settings",
+                "title": "Advanced Security Solutions",
+                "description": "Tailored security strategies for your growing needs."
+              },
+              {
+                "icon": "Users",
+                "title": "Expert Security Team",
+                "description": "A team of certified professionals dedicated to your digital safety."
+              }
+            ],
+            "actionButton": {
+              "label": "More About Us",
+              "href": "/about",
+              "icon": "ArrowRight"
+            }
+          }
+        }
+      },
+      "ourImpact": {
+        "variants": {
+          "CyberVaultOurImpact1": {
+            "backgroundImage": "/images/our-impact-banner.png",
+            "tagline": {
+              "icon": "Activity",
+              "text": "OUR IMPACT"
+            },
+            "title": {
+              "prefix": "Trusted by Businesses, Securing a Safer",
+              "highlight": "Digital Tomorrow"
+            },
+            "description": "Our numbers reflect our commitment to delivering reliable, innovative, and result-driven cybersecurity solutions for businesses of all sizes.",
+            "stats": [
+              {
+                "id": "experience",
+                "numberValue": 25,
+                "suffix": "+",
+                "label": "Years of Experience",
+                "icon": "Users"
+              },
+              {
+                "id": "clients",
+                "numberValue": 500,
+                "suffix": "+",
+                "label": "Clients Protected",
+                "icon": "ShieldCheck"
+              },
+              {
+                "id": "projects",
+                "numberValue": 1200,
+                "suffix": "+",
+                "label": "Security Projects",
+                "icon": "Database"
+              },
+              {
+                "id": "monitoring",
+                "numberValue": 24,
+                "isCustomDisplay": true,
+                "customText": "24/7",
+                "label": "Threat Monitoring",
+                "icon": "Headphones"
+              }
+            ]
+          }
+        }
+      },
+      "process": {
+        "variants": {
+          "CyberVaultProcess1": {
+            "tagBadge": "How It Works",
+            "title": {
+              "prefix": "Step by Step Process Built for",
+              "highlight": "Stronger Digital Security"
+            },
+            "description": "From identifying vulnerabilities and assessing risks to implementing advanced security solutions and continuously monitoring threats.",
+            "contactButton": {
+              "label": "Contact Us",
+              "href": "/contact",
+              "icon": "ArrowUpRight"
+            },
+            "steps": [
+              {
+                "stepNumber": "01",
+                "title": "Assess & Analyze",
+                "description": "We start by evaluating your current digital infrastructure to identify vulnerabilities, risks, and potential gaps.",
+                "icon": "Search",
+                "checkpoints": [
+                  "Identify vulnerabilities, risks, and gaps",
+                  "Analyze systems and security posture"
+                ]
+              },
+              {
+                "stepNumber": "02",
+                "title": "Implement & Secure",
+                "description": "Based on the assessment, we deploy advanced security solutions tailored to your business needs.",
+                "icon": "ShieldCheck",
+                "checkpoints": [
+                  "Deploy advanced cybersecurity solutions",
+                  "Configure and secure your environment"
+                ]
+              },
+              {
+                "stepNumber": "03",
+                "title": "Monitor & Optimize",
+                "description": "We continuously monitor your systems and fine-tune security measures to stay ahead of emerging cyber threats.",
+                "icon": "Settings",
+                "checkpoints": [
+                  "Continuous 24/7 monitoring and mitigation",
+                  "Regular optimization and updates"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "services": {
+        "variants": {
+          "CyberVaultServices1": {
+            "tagline": "OUR SERVICES",
+            "title": {
+              "prefix": "Comprehensive",
+              "highlight": "Cyber Security",
+              "suffix": "Solutions"
+            },
+            "description": "We deliver advanced cybersecurity services to protect your business, data, and digital infrastructure from evolving threats.",
+            "servicesList": [
+              {
+                "id": "threat-detection",
+                "title": "Threat Detection and Prevention",
+                "description": "Real-time monitoring and proactive measures to identify and stop threats before they impact your business.",
+                "icon": "Bug",
+                "isHighlighted": false,
+                "detailedFeatures": [
+                  "24/7 Security Operations Center (SOC) Surveillance",
+                  "AI-Powered Anomaly & Intrusion Detection",
+                  "Proactive Behavioral Threat Hunting",
+                  "Automated Incident Alerting & Quarantine"
+                ],
+                "benefits": "Minimizes system downtime and detects zero-day vulnerabilities prior to exploitation."
+              },
+              {
+                "id": "endpoint-security",
+                "title": "Endpoint Security Solutions",
+                "description": "Protect your devices and endpoints with advanced security tools and continuous monitoring.",
+                "icon": "Laptop",
+                "isHighlighted": false,
+                "detailedFeatures": [
+                  "Next-Gen Antivirus (NGAV) & EDR Integration",
+                  "Remote Mobile & Laptop Fleet Management",
+                  "Zero-Trust Device Access Control",
+                  "Ransomware Rollback Capabilities"
+                ],
+                "benefits": "Ensures absolute protection for remote and on-premise employee devices against modern malware."
+              },
+              {
+                "id": "network-defense",
+                "title": "Network Defense and Firewalls",
+                "description": "Strengthen your network with next-gen firewalls and advanced threat defense systems.",
+                "icon": "Flame",
+                "isHighlighted": false,
+                "detailedFeatures": [
+                  "Next-Generation Firewall (NGFW) Deployment",
+                  "Deep Packet Inspection & Intrusion Prevention (IPS)",
+                  "Secure Multi-Site VPN Networks",
+                  "DDoS Attack Mitigation Infrastructure"
+                ],
+                "benefits": "Shields internal corporate networks from unauthorized external access and malicious bandwidth floods."
+              },
+              {
+                "id": "data-encryption",
+                "title": "Data Encryption and Privacy",
+                "description": "Secure your sensitive data with industry-leading encryption and privacy solutions.",
+                "icon": "Database",
+                "isHighlighted": false,
+                "detailedFeatures": [
+                  "AES-256 Bit Encryption At-Rest and In-Transit",
+                  "Cryptographic Key Management Services (KMS)",
+                  "Data Loss Prevention (DLP) Policies",
+                  "GDPR, HIPAA & ISO 27001 Data Compliance"
+                ],
+                "benefits": "Guarantees business confidentiality and prevents accidental data leakage across teams."
+              },
+              {
+                "id": "cloud-security",
+                "title": "Cloud Security and Compliance",
+                "description": "Keep your cloud environments secure, compliant, and resilient against emerging threats.",
+                "icon": "Cloud",
+                "isHighlighted": false,
+                "detailedFeatures": [
+                  "Multi-Cloud Security Posture Management (CSPM)",
+                  "AWS, Azure & Google Cloud Security Hardening",
+                  "Identity and Access Management (IAM) Audit",
+                  "Continuous Compliance Automated Auditing"
+                ],
+                "benefits": "Protects multi-cloud infrastructure while maintaining strict regulatory compliance."
+              },
+              {
+                "id": "incident-response",
+                "title": "Incident Response and Management",
+                "description": "Rapid response and expert management to minimize risks and ensure business continuity.",
+                "icon": "Settings",
+                "isHighlighted": false,
+                "detailedFeatures": [
+                  "15-Minute SLA Incident Escalation Response",
+                  "Digital Forensic Analysis & Root Cause Audit",
+                  "Containment & System Recovery Orchestration",
+                  "Post-Incident Resilience Advisory"
+                ],
+                "benefits": "Dramatically reduces operational impact and reputational damage during active breaches."
+              }
+            ]
+          }
+        }
+      },
+      "whyChooseUs": {
+        "variants": {
+          "CyberVaultWhyChooseUs1": {
+            "tagBadge": {
+              "icon": "Sparkles",
+              "text": "Why Choose Us"
+            },
+            "title": {
+              "prefix": "Future-Ready Cybersecurity That Goes",
+              "highlight": "Beyond Defense"
+            },
+            "description": "We don't just stop attacks—we prepare your business to withstand them. By combining proactive defense, real-time intelligence, and long-term strategies.",
+            "highlightBanner": {
+              "percentage": 95,
+              "quote": "“Cybersecurity is not just about protecting systems, it's about protecting trust.”",
+              "bulletPoints": [
+                "Future-Ready Security",
+                "24/7 Expert Support",
+                "Advanced Data Protection"
+              ]
+            },
+            "featurePillars": [
+              {
+                "icon": "LuShieldHalf",
+                "title": "Proactive Threat Detection",
+                "desc": "We don't just wait for threats to strike — our advanced monitoring tools identify risks before they become attacks."
+              },
+              {
+                "icon": "IoSettingsOutline",
+                "title": "Tailored Security Solutions",
+                "desc": "We design customized cybersecurity strategies that align with your industry and business goals."
+              },
+              {
+                "icon": "HiUserGroup",
+                "title": "Expert Team Support",
+                "desc": "Our certified experts work as an extension of your team, ensuring continuous protection and guidance."
+              },
+              {
+                "icon": "GiNetworkBars",
+                "title": "Long-Term Partnership",
+                "desc": "We focus on building lasting relationships and helping your business stay secure for the future."
+              }
+            ],
+            "images": {
+              "mainTall": {
+                "src": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800",
+                "alt": "Cybersecurity Operations Lead"
+              },
+              "stackedTop": {
+                "src": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=600",
+                "alt": "Security Analyst Monitoring"
+              },
+              "stackedBottom": {
+                "src": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=600",
+                "alt": "Cyber Risk Assessment"
+              }
+            },
+            "experienceBadge": {
+              "icon": "Award",
+              "years": "25+",
+              "label": "Years of Experience"
+            }
+          }
+        }
+      },
+      "testimonial": {
+        "variants": {
+          "CyberVaultTestimonial1": {
+            "tagline": "TESTIMONIALS",
+            "title": {
+              "prefix": "What Our Clients are",
+              "highlight": "Saying"
+            },
+            "description": "Trusted by businesses across industries for reliable and effective cybersecurity solutions.",
+            "testimonials": [
+              {
+                "id": 1,
+                "rating": 5,
+                "quote": "Their cybersecurity solutions have significantly strengthened our security posture. The team is highly professional, responsive, and truly understands our business needs.",
+                "author": "Kevin Andrew",
+                "role": "IT Manager, TechSphere",
+                "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=300"
+              },
+              {
+                "id": 2,
+                "rating": 5,
+                "quote": "Excellent service and deep expertise! Their proactive approach to threat detection and quick response time has given us complete peace of mind. Highly recommended for any business.",
+                "author": "Alina Parker",
+                "role": "CEO, Global Tech",
+                "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=300"
+              },
+              {
+                "id": 3,
+                "rating": 5,
+                "quote": "CyberVault helped us comply with regulatory standards seamlessly while fortifying our cloud perimeter against sophisticated ransomware attempts.",
+                "author": "Michael Chang",
+                "role": "CTO, FinSecure Inc",
+                "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=300"
+              },
+              {
+                "id": 4,
+                "rating": 5,
+                "quote": "The 24/7 SOC monitoring team detected and neutralized an active threat within minutes. Their dedication to client protection is truly outstanding.",
+                "author": "Sarah Jenkins",
+                "role": "Head of Infrastructure, EnterpriseX",
+                "avatar": "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=300"
+              }
+            ]
+          }
+        }
+      },
+      "blog": {
+        "variants": {
+          "CyberVaultBlog1": {
+            "tagline": "LATEST BLOG",
+            "title": {
+              "prefix": "Our Latest",
+              "highlight": "Insights & Blogs"
+            },
+            "description": "Stay updated with expert insights, industry trends, and practical tips on cybersecurity, data protection, and risk management.",
+            "blogPosts": [
+              {
+                "id": 1,
+                "date": "June 24, 2025",
+                "title": "The Linux Threat You Need to Know",
+                "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=800",
+                "excerpt": "An in-depth analysis of newly discovered Linux malware vectors targeting cloud servers and enterprise Linux distributions. Learn how to audit your systems and mitigate risk effectively.",
+                "author": "Security Research Team",
+                "readTime": "5 min read"
+              },
+              {
+                "id": 2,
+                "date": "June 18, 2025",
+                "title": "Closing Security Gaps with Innovation",
+                "image": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=800",
+                "excerpt": "How modern AI-driven threat detection platforms help security operation centers identify zero-day vulnerabilities and bridge critical infrastructure compliance gaps.",
+                "author": "Alex Morgan",
+                "readTime": "4 min read"
+              },
+              {
+                "id": 3,
+                "date": "June 10, 2025",
+                "title": "BianLian Focuses on Data Extortion",
+                "image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=800",
+                "excerpt": "The BianLian group shifts away from traditional ransomware encryption toward pure data extortion threats. Here is what security teams must do to safeguard sensitive assets.",
+                "author": "Threat Intelligence Desk",
+                "readTime": "6 min read"
+              },
+              {
+                "id": 4,
+                "date": "May 28, 2025",
+                "title": "Zero-Trust Architecture for Remote Work",
+                "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800",
+                "excerpt": "Implementing strict identity verification and micro-segmentation strategies across hybrid cloud and remote workforce deployments.",
+                "author": "David Chen",
+                "readTime": "7 min read"
+              },
+              {
+                "id": 5,
+                "date": "May 15, 2025",
+                "title": "AI-Powered Threat Detection Systems",
+                "image": "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?auto=format&fit=crop&q=80&w=800",
+                "excerpt": "Exploring the next frontier of defensive cyber capabilities where automated machine intelligence intercepts attacks in milliseconds.",
+                "author": "Dr. Sarah Lin",
+                "readTime": "5 min read"
+              },
+              {
+                "id": 6,
+                "date": "May 02, 2025",
+                "title": "Securing Cloud-Native Infrastructure",
+                "image": "https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&q=80&w=800",
+                "excerpt": "Best practices for hardening Kubernetes clusters, container registries, and serverless pipelines in enterprise deployments.",
+                "author": "DevOps Security Team",
+                "readTime": "8 min read"
+              }
+            ]
+          }
+        }
+      },
+      "portfolio": {
+        "variants": {
+          "CyberVaultPortfolio1": {
+            "tagline": "PORTFOLIO",
+            "title": {
+              "prefix": "Our Successful",
+              "highlight": "Projects"
+            },
+            "description": "Explore our portfolio of successful projects and see how we’ve helped businesses of all sizes protect their data and achieve their goals.",
+            "projects": [
+              {
+                "id": "cloud-security",
+                "title": "Cloud Security Implementation",
+                "description": "Secured multi-cloud infrastructure with advanced monitoring and threat detection.",
+                "image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=900"
+              },
+              {
+                "id": "endpoint-protection",
+                "title": "Endpoint Protection Deployment",
+                "description": "Deployed next-generation EDR tools across 5,000+ corporate devices seamlessly.",
+                "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=900"
+              },
+              {
+                "id": "network-defense",
+                "title": "Enterprise Network Defense",
+                "description": "Upgraded next-gen firewalls and real-time SOC traffic analysis for global offices.",
+                "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=900"
+              }
+            ]
+          }
+        }
+      },
+      "contact": {
+        "variants": {
+          "CyberVaultContact1": {
+            "infoCards": [
+              {
+                "icon": "BiSolidPhoneCall",
+                "title": "Call Us",
+                "line1": "+1 000000000",
+                "line2": "+1 (800) 555-0199",
+                "href": "tel:+1000000000"
+              },
+              {
+                "icon": "FaMapMarkerAlt",
+                "title": "Our Address",
+                "line1": "3170 Rosewood Lane Unit 200",
+                "line2": "Beverly Hills, CA 90210",
+                "href": "#map"
+              },
+              {
+                "icon": "IoMdMail",
+                "title": "Email Us",
+                "line1": "info@xyz.com",
+                "line2": "support@xyz.com",
+                "href": "mailto:info@xyz.com"
+              },
+              {
+                "icon": "Clock",
+                "title": "Office Hours",
+                "line1": "Mon - Fri: 10AM - 5:00PM",
+                "line2": "Sat: 11AM - 2:00PM",
+                "href": "#"
+              }
+            ],
+            "header": {
+              "tagline": "GET IN TOUCH",
+              "title": {
+                "prefix": "Contact us",
+                "highlight": "today!"
+              },
+              "description": "Have questions or need expert cybersecurity support? Our team is ready to guide you with tailored solutions and rapid response.",
+              "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26430.393553120905!2d-118.411656!3d34.073620!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bc04d6d147ab%3A0xd6c7c379fd081ed1!2sBeverly%20Hills%2C%20CA%2090210%2C%20USA!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+            },
+            "form": {
+              "tagline": "SEND US A MESSAGE",
+              "title": {
+                "prefix": "Fill up the",
+                "highlight": "form"
+              },
+              "description": "Simply fill out the form below with your details and requirements, and our team will get back to you promptly.",
+              "submitButton": {
+                "label": "Send Message",
+                "icon": "ArrowUpRight"
+              },
+              "successMessage": "Thank you! Your message has been sent successfully. We will get back to you shortly."
+            }
+          }
+        }
+      },
+      "getAQuote": {
+        "variants": {
+          "CyberVaultGetAQuote1": {
+            "form": {
+              "tagline": "REQUEST A QUOTE",
+              "title": {
+                "prefix": "Get a Free",
+                "highlight": "Security Quote"
+              },
+              "description": "Share your requirements and our team will get back to you with a tailored solution and transparent pricing.",
+              "servicesOptions": [
+                "Threat Detection & Prevention",
+                "Endpoint Security & EDR",
+                "Network Defense & Firewalls",
+                "Data Encryption & Compliance",
+                "Cloud Security Hardening",
+                "Incident Response & Forensics"
+              ],
+              "employeeOptions": [
+                "1 - 10 Employees",
+                "11 - 50 Employees",
+                "51 - 200 Employees",
+                "201 - 500 Employees",
+                "500+ Enterprise"
+              ],
+              "submitButton": {
+                "label": "Submit Request",
+                "icon": "ArrowRight"
+              },
+              "successTitle": "Quote Request Received!",
+              "successMessage": "Our cybersecurity specialists will analyze your requirements and send a customized proposal shortly."
+            },
+            "benefits": {
+              "tagline": "WHY GET A QUOTE",
+              "title": {
+                "prefix": "Customized Solutions for",
+                "highlight": "Your Business"
+              },
+              "description": "Every business has unique security needs. We provide tailored solutions and transparent pricing to help you choose the right protection for your organization.",
+              "items": [
+                {
+                  "icon": "ShieldCheck",
+                  "title": "Tailored Solutions",
+                  "desc": "Pricing based on your specific requirements."
+                },
+                {
+                  "icon": "Headphones",
+                  "title": "Expert Consultation",
+                  "desc": "Get guidance from our security specialists."
+                },
+                {
+                  "icon": "FileText",
+                  "title": "Transparent Pricing",
+                  "desc": "No hidden costs. Clear and detailed quotes."
+                },
+                {
+                  "icon": "Clock",
+                  "title": "Quick Response",
+                  "desc": "Our team will get back to you within 24 hours."
+                }
+              ],
+              "image": {
+                "src": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=800",
+                "alt": "Cybersecurity Network Operations"
+              }
+            }
+          }
+        }
+      },
+      "footer": {
+        "variants": {
+          "CyberVaultFooter1": {
+            "brand": {
+              "logo": {
+                "src": "/logo/logo-white-2.png",
+                "alt": "CyberVault Logo",
+                "width": 230,
+                "height": 230,
+                "href": "/"
+              },
+              "description": "Protecting your business with advanced cybersecurity solutions, proactive threat detection, and reliable digital defense.",
+              "socialLinks": [
+                {
+                  "name": "Facebook",
+                  "icon": "FaFacebook",
+                  "href": "https://facebook.com"
+                },
+                {
+                  "name": "Twitter",
+                  "icon": "BsTwitter",
+                  "href": "https://twitter.com"
+                },
+                {
+                  "name": "LinkedIn",
+                  "icon": "LiaLinkedin",
+                  "href": "https://linkedin.com"
+                },
+                {
+                  "name": "Instagram",
+                  "icon": "BsInstagram",
+                  "href": "https://instagram.com"
+                },
+                {
+                  "name": "YouTube",
+                  "icon": "BsYoutube",
+                  "href": "https://youtube.com"
+                }
+              ]
+            },
+            "quickLinks": {
+              "title": "Quick Links",
+              "links": [
+                {
+                  "label": "Home",
+                  "href": "/"
+                },
+                {
+                  "label": "About Us",
+                  "href": "/about"
+                },
+                {
+                  "label": "Our Services",
+                  "href": "/services"
+                },
+                {
+                  "label": "Portfolio",
+                  "href": "/portfolio"
+                },
+                {
+                  "label": "Blog",
+                  "href": "/blog"
+                },
+                {
+                  "label": "Contact Us",
+                  "href": "/contact"
+                }
+              ]
+            },
+            "servicesLinks": {
+              "title": "Our Services",
+              "links": [
+                {
+                  "label": "Threat Detection",
+                  "href": "/services"
+                },
+                {
+                  "label": "Endpoint Security",
+                  "href": "/services"
+                },
+                {
+                  "label": "Network Security",
+                  "href": "/services"
+                },
+                {
+                  "label": "Data Protection",
+                  "href": "/services"
+                },
+                {
+                  "label": "Cloud Security",
+                  "href": "/services"
+                },
+                {
+                  "label": "Incident Response",
+                  "href": "/services"
+                }
+              ]
+            },
+            "resourceLinks": {
+              "title": "Resources",
+              "links": [
+                {
+                  "label": "Blog",
+                  "href": "/blog"
+                },
+                {
+                  "label": "Case Studies",
+                  "href": "/portfolio"
+                },
+                {
+                  "label": "About Company",
+                  "href": "/about"
+                },
+                {
+                  "label": "Privacy Policy",
+                  "href": "/contact"
+                },
+                {
+                  "label": "Terms & Conditions",
+                  "href": "/contact"
+                },
+                {
+                  "label": "Support & Help",
+                  "href": "/contact"
+                }
+              ]
+            },
+            "getInTouch": {
+              "title": "Get In Touch",
+              "address": {
+                "text": "3170 Rosewood Lane Unit 200\nBeverly Hills, CA 90210",
+                "icon": "FaMapMarkerAlt"
+              },
+              "phone": {
+                "text": "+1 000000000",
+                "href": "tel:+1000000000",
+                "icon": "BiSolidPhoneCall"
+              },
+              "email": {
+                "text": "info@xyz.com",
+                "href": "mailto:info@xyz.com",
+                "icon": "IoMdMail"
+              },
+              "actionButton": {
+                "label": "Get a Quote",
+                "href": "/get-a-quote",
+                "icon": "ArrowRight"
+              }
+            },
+            "bottomBar": {
+              "copyright": "© 2026 CyberVault. All Rights Reserved.",
+              "links": [
+                {
+                  "label": "Privacy Policy",
+                  "href": "/contact"
+                },
+                {
+                  "label": "Terms & Conditions",
+                  "href": "/contact"
+                },
+                {
+                  "label": "About Us",
+                  "href": "/about"
+                },
+                {
+                  "label": "Contact",
+                  "href": "/contact"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "pageTopSection": {
+        "variants": {
+          "CyberVaultPageTop1": {
+            "title": "Cyber Security Operations",
+            "breadcrumbs": [
+              {
+                "label": "Home",
+                "href": "/"
+              },
+              {
+                "label": "Cyber Security",
+                "href": "/"
+              }
+            ],
+            "backgroundImage": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1200"
+          }
+        }
+      },
+      "thankYou": {
+        "variants": {
+          "CyberVaultThankYou1": {
+            "pageTop": {
+              "title": "Transmission Confirmed",
+              "breadcrumbs": [
+                {
+                  "label": "Home",
+                  "href": "/"
+                },
+                {
+                  "label": "Thank You",
+                  "href": "/thank-you"
+                }
+              ]
+            },
+            "tag": "Transmission Received Securely",
+            "titlePart1": "Thank You for Contacting",
+            "titlePart2": "CyberVault",
+            "description": "Your perimeter inquiry has been encrypted and delivered directly to our Lead Security Operations Center. A Senior Security Architect will contact you within 2 hours.",
+            "primaryButton": {
+              "text": "Back to Home",
+              "href": "/",
+              "icon": "Home"
+            },
+            "secondaryButton": {
+              "text": "Explore Solutions",
+              "href": "/services",
+              "icon": "ArrowRight"
+            }
+          }
+        }
+      }
+    }
+  }
+}

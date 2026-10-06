@@ -1,0 +1,208 @@
+'use client';
+
+import React from 'react';
+import { motion } from 'framer-motion';
+import {
+    ShieldCheck,
+    Settings,
+    Users,
+    ArrowRight
+} from 'lucide-react';
+import AnimatedHeading from '@/components/common/AnimatedHeading';
+import { siteMap, type CyberVaultAboutData } from '@/data';
+
+const aboutIconMap: Record<string, React.ComponentType<{ className?: string }>> = {
+    ShieldCheck,
+    Settings,
+    Users,
+    ArrowRight
+};
+
+interface AboutSectionProps {
+    data?: CyberVaultAboutData;
+    onLearnMoreClick?: () => void;
+}
+
+export default function AboutSection({ data: propData, onLearnMoreClick }: AboutSectionProps = {}) {
+    const data = propData || siteMap.about;
+    const BadgeIcon = aboutIconMap[data.experienceBadge.icon] || ShieldCheck;
+    const ActionIcon = aboutIconMap[data.actionButton.icon] || ArrowRight;
+
+    const handleButtonClick = () => {
+        if (onLearnMoreClick) {
+            onLearnMoreClick();
+        } else if (typeof window !== 'undefined') {
+            window.location.href = data.actionButton.href;
+        }
+    };
+
+    return (
+        <section className="relative py-8 lg:py-14 bg-white text-slate-800 overflow-hidden font-sans">
+
+            {/* Background Ambient Aesthetics */}
+            <div className="absolute top-1/3 -right-20 w-96 h-96 bg-blue-100/60 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute bottom-10 -left-20 w-80 h-80 bg-cyan-100/50 rounded-full blur-3xl pointer-events-none" />
+
+            <div className="max-w-[1380px] lg:w-[97%] xl:w-[95%] w-full mx-auto px-4 relative z-10">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+                    {/* ==================== LEFT SHOWCASE COLUMN ==================== */}
+                    <motion.div
+                        initial={{ opacity: 0, x: -40 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        className="lg:col-span-6 relative"
+                    >
+                        <div className="relative w-full max-w-lg mx-auto lg:max-w-none">
+
+                            {/* Outer Decorative Blue Frame Accent */}
+                            <div className="absolute -top-5 -left-5 w-40 h-40 bg-blue-600 rounded-4xl -z-10" />
+                            <div className="absolute top-2 left-2 right-2 bottom-12 border-2 border-blue-400/30 rounded-3xl -z-10 pointer-events-none" />
+
+                            {/* Primary Top Image */}
+                            <div
+                                data-cursor-card
+                                className="relative z-10 rounded-4xl overflow-hidden shadow-2xl border-4 border-white bg-slate-900 group"
+                            >
+                                <img
+                                    src={data.images.primary.src}
+                                    alt={data.images.primary.alt}
+                                    className="w-full h-[280px] sm:h-[440px] object-cover group-hover:scale-108 transition-transform duration-700 ease-out"
+                                />
+                            </div>
+
+                            {/* Secondary Bottom-Right Image */}
+                            <motion.div
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.7, delay: 0.3 }}
+                                data-cursor-card
+                                className="relative lg:absolute -bottom-26 right-0 lg:right-10 w-[85%] sm:w-[65%] mt-6 lg:mt-0 z-20 rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-900 group"
+                            >
+                                <img
+                                    src={data.images.secondary.src}
+                                    alt={data.images.secondary.alt}
+                                    className="w-full h-[200px] lg:h-[230px] object-cover group-hover:scale-108 transition-transform duration-700 ease-out"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-tr from-blue-950/60 via-transparent to-transparent pointer-events-none" />
+                            </motion.div>
+
+                            {/* Floating Dark Blue Experience Badge */}
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.85 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: 0.5 }}
+                                whileHover={{ y: -6, boxShadow: "0 25px 35px -5px rgba(15, 23, 42, 0.4)" }}
+                                data-cursor-text={data.experienceBadge.years}
+                                className="absolute -bottom-8 left-2 sm:left-4 z-30 bg-[#021338] text-white p-4 rounded-2xl shadow-2xl border border-blue-700/50 flex items-center space-x-4 max-w-[240px] cursor-pointer"
+                            >
+                                <div className="w-14 h-14 rounded-full bg-blue-600 flex items-center justify-center text-white shrink-0 shadow-lg shadow-blue-600/40">
+                                    <BadgeIcon className="w-8 h-8" />
+                                </div>
+                                <div>
+                                    <div className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white leading-none">
+                                        {data.experienceBadge.years}
+                                    </div>
+                                    <div className="text-xs sm:text-sm text-blue-200 mt-1 leading-snug">
+                                        {data.experienceBadge.label}
+                                    </div>
+                                </div>
+                            </motion.div>
+
+                            {/* Bottom Decorative 4x4 Dot Matrix Grid Pattern */}
+                            <div className="absolute -bottom-16 left-8 z-0 grid grid-cols-4 gap-2.5 pointer-events-none opacity-80">
+                                {[...Array(16)].map((_, i) => (
+                                    <div key={i} className="w-2 h-2 rounded-full bg-blue-400/50" />
+                                ))}
+                            </div>
+
+                        </div>
+                    </motion.div>
+
+                    {/* ==================== RIGHT CONTENT COLUMN ==================== */}
+                    <motion.div
+                        initial={{ opacity: 0, x: 40 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        className="lg:col-span-6 space-y-4 pt-6 lg:pt-0"
+                    >
+
+                        {/* Top Subheading Tagline */}
+                        <div className="inline-flex items-center space-x-3">
+                            <div className="w-12 h-[3px] bg-blue-600 rounded-full" />
+                            <span className="text-xs sm:text-sm uppercase font-bold tracking-[0.25em] text-blue-600">
+                                {data.tagline}
+                            </span>
+                        </div>
+
+                        {/* Main Section Headline */}
+                        <AnimatedHeading
+                            as="h2"
+                            className="text-3xl sm:text-4xl lg:text-5xl text-slate-900 leading-[1.2] tracking-tight"
+                        >
+                            {data.title.prefix}{' '}
+                            <span className="text-blue-600 inline-block">
+                                {data.title.highlight}
+                            </span>{' '}
+                            {data.title.suffix}
+                        </AnimatedHeading>
+
+                        {/* Body Paragraph */}
+                        <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
+                            {data.description}
+                        </p>
+
+                        {/* Three Feature Cards Grid */}
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+                            {data.features.map((feature) => {
+                                const IconComponent = aboutIconMap[feature.icon] || ShieldCheck;
+                                return (
+                                    <motion.div
+                                        key={feature.title}
+                                        data-cursor-card
+                                        whileHover={{ y: -6, boxShadow: "0 20px 35px -5px rgba(37, 99, 235, 0.15)" }}
+                                        className="group bg-slate-50/90 border border-slate-200/80 hover:border-blue-400 p-5 rounded-2xl transition-all duration-300 flex flex-col justify-between cursor-pointer"
+                                    >
+                                        <div>
+                                            <div className="w-14 h-14 rounded-md bg-blue-100 text-blue-600 flex items-center justify-center mb-4 shadow-sm group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
+                                                <IconComponent className="w-8 h-8 stroke-[1.8]" />
+                                            </div>
+                                            <h3 className="font-semibold text-slate-900 text-base mb-2 leading-snug group-hover:text-blue-600 transition-colors">
+                                                {feature.title}
+                                            </h3>
+                                            <p className="text-sm text-slate-500 leading-relaxed">
+                                                {feature.description}
+                                            </p>
+                                        </div>
+                                    </motion.div>
+                                );
+                            })}
+                        </div>
+
+                        {/* Action Pill Button */}
+                        <div className="pt-2">
+                            <motion.button
+                                onClick={handleButtonClick}
+                                data-cursor-text="About"
+                                whileHover={{ scale: 1.04, boxShadow: "0 10px 25px -5px rgba(37, 99, 235, 0.4)" }}
+                                whileTap={{ scale: 0.96 }}
+                                className="group inline-flex items-center space-x-4 bg-gradient-to-r from-blue-700 via-blue-600 to-indigo-600 hover:from-blue-600 hover:to-indigo-500 text-white py-3.5 px-7 rounded-full shadow-lg shadow-blue-600/30 transition-all duration-300 cursor-pointer"
+                            >
+                                <span className="text-base tracking-wide pl-1">{data.actionButton.label}</span>
+                                <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-blue-600 group-hover:translate-x-1 transition-transform duration-300 shadow-md">
+                                    <ActionIcon className="w-4 h-4 text-blue-600 stroke-[2.5]" />
+                                </div>
+                            </motion.button>
+                        </div>
+
+                    </motion.div>
+
+                </div>
+            </div>
+        </section>
+    );
+}
