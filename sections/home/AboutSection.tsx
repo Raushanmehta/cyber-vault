@@ -68,7 +68,7 @@ export default function AboutSection({ data: propData, onLearnMoreClick }: About
                                 <img
                                     src={data.images.primary.src}
                                     alt={data.images.primary.alt}
-                                    className="w-full h-[280px] sm:h-[440px] object-cover group-hover:scale-108 transition-transform duration-700 ease-out"
+                                    className="w-full h-[340px] lg:h-[440px] object-cover transition-transform duration-700 ease-out"
                                 />
                             </div>
 
@@ -79,7 +79,7 @@ export default function AboutSection({ data: propData, onLearnMoreClick }: About
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.7, delay: 0.3 }}
                                 data-cursor-card
-                                className="relative lg:absolute -bottom-26 right-0 lg:right-10 w-[85%] sm:w-[65%] mt-6 lg:mt-0 z-20 rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-900 group"
+                                className="relative lg:absolute lg:-bottom-26 right-0 lg:right-10 w-[85%] sm:w-[65%] mt-6 lg:mt-0 z-20 rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-900 group"
                             >
                                 <img
                                     src={data.images.secondary.src}

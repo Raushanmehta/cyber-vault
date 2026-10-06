@@ -73,15 +73,13 @@ export default function TestimonialSection({ data: propData }: TestimonialSectio
                         }}
                         className="w-full max-w-[1350px] mx-auto"
                     >
-                        <CarouselContent className="-ml-6 py-4">
-                            {data.testimonials.map((testimonial, index) => (
+                        <CarouselContent className="-ml-4 sm:-ml-6 py-4">
+                            {data.testimonials.map((testimonial) => (
                                 <CarouselItem
                                     key={testimonial.id}
-                                    className="pl-6 basis-full md:basis-1/2 lg:basis-1/3"
+                                    className="pl-4 sm:pl-6 basis-full lg:basis-1/2"
                                 >
-                                    <TestimonialCard
-                                        item={testimonial}
-                                    />
+                                    <TestimonialCard item={testimonial} />
                                 </CarouselItem>
                             ))}
                         </CarouselContent>

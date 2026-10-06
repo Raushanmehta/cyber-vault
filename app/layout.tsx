@@ -31,8 +31,8 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col font-sans">
         <CustomCursor />
         <SmoothScroll>
+          <TopBar email="info@xyz.com" contactUrl="/contact" />
           <header className="sticky top-0 z-50 w-full shadow-sm">
-            <TopBar email="info@xyz.com" contactUrl="/contact" />
             <Navbar />
           </header>
           {children}

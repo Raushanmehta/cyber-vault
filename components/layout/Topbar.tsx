@@ -39,7 +39,7 @@ export default function TopBar({
     const EmailIcon = iconMap[data.contact.emailIcon] || Mail;
 
     return (
-        <div className="w-full bg-gradient-to-r from-blue-950 via-blue-900 to-indigo-950 text-white text-xs sm:text-sm py-2 px-4 sm:px-8 border-b border-blue-800/40 shadow-sm relative z-50 font-sans">
+        <div className="hidden md:block w-full bg-gradient-to-r from-blue-950 via-blue-900 to-indigo-950 text-white text-xs sm:text-sm py-2 px-4 sm:px-8 border-b border-blue-800/40 shadow-sm relative z-50 font-sans">
             <div className="max-w-[1350px] mx-auto flex flex-col md:flex-row items-center justify-between gap-3 md:gap-0">
 
                 {/* Left: Notification Banner */}

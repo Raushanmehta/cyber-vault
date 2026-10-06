@@ -69,9 +69,12 @@ export default function OurImpactSection({ data: propData }: OurImpactSectionPro
             <div
                 className="absolute inset-0 bg-cover bg-center opacity-25 pointer-events-none"
                 style={{
-                    backgroundImage: `url('${data.backgroundImage}')`
+                    backgroundImage: `url('${data.backgroundImage || '/images/our-impact-banner.png'}')`
                 }}
             />
+            {/* Center Black Gradient (Behind text & icons, on top of image) */}
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_75%_at_50%_50%,rgba(0,0,0,0.88)_0%,rgba(0,0,0,0.72)_50%,rgba(2,8,23,0.95)_100%)] pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#020817] via-transparent to-[#020817] pointer-events-none" />
 
             {/* Cyber Grid Node Graphics - Left Bottom Corner */}
             <div className="absolute bottom-0 left-0 w-80 h-80 pointer-events-none opacity-40">
@@ -143,26 +146,35 @@ export default function OurImpactSection({ data: propData }: OurImpactSectionPro
 
                 </div>
 
-                {/* Animated Stats Cards Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+                {/* Grid Box: Centered, close together with circular badge icon frame & vertical dividers */}
+                <div className="max-w-4xl lg:max-w-5xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 justify-center items-center mt-8 sm:mt-10">
+
                     {data.stats.map((stat, index) => {
                         const IconComponent = impactIconMap[stat.icon] || Users;
+
                         return (
                             <motion.div
                                 key={stat.id}
+                                data-cursor-card
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ duration: 0.5, delay: index * 0.1 }}
-                                whileHover={{ y: -6, boxShadow: "0 20px 35px -5px rgba(14, 165, 233, 0.2)" }}
-                                data-cursor-card
-                                className="group relative bg-blue-950/40 backdrop-blur-md border border-blue-800/50 hover:border-cyan-500/60 p-6 rounded-2xl transition-all duration-300 flex flex-col items-center text-center shadow-lg cursor-pointer"
+                                transition={{ duration: 0.5, delay: index * 0.15 }}
+                                whileHover={{ y: -6 }}
+                                className={`relative flex flex-col items-center text-center p-3 sm:p-4 rounded-2xl hover:bg-slate-900/40 transition-all duration-300 cursor-pointer group ${
+                                    index !== data.stats.length - 1 ? 'lg:border-r lg:border-blue-800/40' : ''
+                                }`}
                             >
-                                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-900/80 to-blue-950 border border-blue-700/60 flex items-center justify-center text-cyan-400 mb-4 shadow-inner group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
-                                    <IconComponent className="w-8 h-8" />
+                                {/* Glowing Outer Badge Icon Frame */}
+                                <div className="relative mb-4">
+                                    <div className="absolute inset-0 bg-cyan-400/20 rounded-full blur-md group-hover:bg-cyan-400/40 transition-all duration-300" />
+                                    <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-950 border-2 border-cyan-400/60 flex items-center justify-center text-white shadow-lg shadow-blue-600/30 group-hover:scale-110 transition-transform duration-300">
+                                        <IconComponent className="w-6 h-6 sm:w-7 sm:h-7 text-cyan-300 stroke-[2.2]" />
+                                    </div>
                                 </div>
 
-                                <div className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white mb-2">
+                                {/* Stat Big Number Counter */}
+                                <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-none mb-1.5 group-hover:text-cyan-300 transition-colors">
                                     <AnimatedCounter
                                         value={stat.numberValue}
                                         suffix={stat.suffix || ''}
@@ -171,12 +183,14 @@ export default function OurImpactSection({ data: propData }: OurImpactSectionPro
                                     />
                                 </div>
 
-                                <div className="text-sm sm:text-base font-medium text-slate-300 group-hover:text-cyan-300 transition-colors">
+                                {/* Stat Title Label */}
+                                <div className="text-xs sm:text-sm font-semibold text-gray-300 tracking-wide">
                                     {stat.label}
                                 </div>
                             </motion.div>
                         );
                     })}
+
                 </div>
 
             </div>
