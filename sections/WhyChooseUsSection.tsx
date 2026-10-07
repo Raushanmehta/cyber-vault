@@ -76,7 +76,6 @@ export default function WhyChooseUsSection({ data: propData }: WhyChooseUsSectio
                         <motion.div
                             whileHover={{ y: -4, boxShadow: "0 20px 35px -5px rgba(37, 99, 235, 0.12)" }}
                             transition={{ duration: 0.3 }}
-                            data-cursor-card
                             className="bg-[#f3f7ff]/90 border border-blue-100/70 rounded-xl p-6 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-sm cursor-pointer"
                         >
                             {/* Circular Progress & Quote */}
@@ -147,7 +146,6 @@ export default function WhyChooseUsSection({ data: propData }: WhyChooseUsSectio
                                         viewport={{ once: true }}
                                         transition={{ duration: 0.5, delay: index * 0.1 }}
                                         whileHover={{ y: -5 }}
-                                        data-cursor-card
                                         className="group flex items-start space-x-4 py-2 rounded-2xl hover:bg-slate-50/80 transition-all duration-300 cursor-pointer"
                                     >
                                         <div className="w-14 h-14 rounded-full bg-blue-50 flex items-center justify-center flex-shrink-0 text-blue-600 border border-blue-100 group-hover:scale-110 group-hover:rotate-6 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm">
@@ -178,7 +176,6 @@ export default function WhyChooseUsSection({ data: propData }: WhyChooseUsSectio
                         {/* Left Main Tall Image */}
                         <motion.div
                             transition={{ duration: 0.3 }}
-                            data-cursor-card
                             className="group relative rounded-3xl overflow-hidden shadow-xl h-[460px] sm:h-[600px] cursor-pointer"
                         >
                             <img
@@ -193,7 +190,6 @@ export default function WhyChooseUsSection({ data: propData }: WhyChooseUsSectio
                         <div className="space-y-4 flex flex-col justify-end h-[460px] sm:h-[600px]">
                             <motion.div
                                 transition={{ duration: 0.3 }}
-                                data-cursor-card
                                 className="group relative rounded-2xl overflow-hidden shadow-md h-[220px] sm:h-[260px] cursor-pointer"
                             >
                                 <img
@@ -206,7 +202,6 @@ export default function WhyChooseUsSection({ data: propData }: WhyChooseUsSectio
 
                             <motion.div
                                 transition={{ duration: 0.3 }}
-                                data-cursor-card
                                 className="group relative rounded-2xl overflow-hidden shadow-md h-[220px] sm:h-[260px] cursor-pointer"
                             >
                                 <img
@@ -225,7 +220,6 @@ export default function WhyChooseUsSection({ data: propData }: WhyChooseUsSectio
                             viewport={{ once: true }}
                             transition={{ delay: 0.3, duration: 0.5 }}
                             whileHover={{ scale: 1.04, y: -4, boxShadow: "0 25px 35px -5px rgba(3, 24, 70, 0.4)" }}
-                            data-cursor-text={data.experienceBadge.years}
                             className="absolute -bottom-6 left-1/2 -translate-x-1/2 sm:left-12 sm:translate-x-0 z-20 bg-gradient-to-r from-[#031846] via-blue-600 to-cyan-500 rounded-2xl p-4 shadow-2xl flex items-center space-x-4 border border-white/20 text-white min-w-[260px] cursor-pointer"
                         >
                             <div className="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-md flex items-center justify-center flex-shrink-0">

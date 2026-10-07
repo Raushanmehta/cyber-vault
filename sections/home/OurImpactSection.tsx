@@ -155,7 +155,6 @@ export default function OurImpactSection({ data: propData }: OurImpactSectionPro
                         return (
                             <motion.div
                                 key={stat.id}
-                                data-cursor-card
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}

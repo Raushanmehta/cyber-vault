@@ -143,7 +143,6 @@ export default function HeroSection({ data: propData, onEnquireClick }: HeroSect
                         >
                             <motion.button
                                 onClick={handleCtaClick}
-                                data-cursor-text="Enquire"
                                 whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(14, 165, 233, 0.5)" }}
                                 whileTap={{ scale: 0.95 }}
                                 className="group relative inline-flex items-center justify-between space-x-4 bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-400 hover:from-blue-500 hover:to-cyan-300 text-white py-3.5 px-7 rounded-full shadow-lg shadow-blue-600/30 transition-all duration-300 cursor-pointer"
@@ -233,7 +232,6 @@ export default function HeroSection({ data: propData, onEnquireClick }: HeroSect
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.6, delay: 0.4 + idx * 0.1 }}
                                     whileHover={{ scale: 1.05 }}
-                                    data-cursor-text={stat.label}
                                     className={`absolute ${isTop ? 'top-2 sm:top-6' : 'bottom-2 sm:bottom-6'} right-0 z-20 backdrop-blur-xl border border-cyan-500/40 p-3 sm:p-3.5 rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.6)] flex items-center gap-3 cursor-pointer`}
                                 >
                                     <div className="flex items-center justify-center text-cyan-400 shrink-0">

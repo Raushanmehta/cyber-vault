@@ -82,7 +82,6 @@ export default function Navbar({
                     href={data.logo.href}
                     onClick={() => handleItemClick(data.logo.href)}
                     className="flex items-center"
-                    data-cursor-text="Home"
                 >
                     <Image
                         src={data.logo.src}
@@ -129,7 +128,6 @@ export default function Navbar({
                             handleItemClick(data.actionButton.href);
                             if (onEnquireClick) onEnquireClick();
                         }}
-                        data-cursor-text="Quote"
                         className="flex items-center space-x-2 bg-gradient-to-r from-blue-700 via-blue-600 to-indigo-700 hover:from-blue-600 hover:to-indigo-600 text-white font-medium text-sm px-6 py-3 rounded-full shadow-lg shadow-blue-600/30 transition-all duration-300 group cursor-pointer"
                     >
                         <span>{data.actionButton.label}</span>

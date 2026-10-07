@@ -1,6 +1,4 @@
 "use client";
-
-import React from "react";
 import { useRouter } from "next/navigation";
 import BlogCard from "@/components/cards/BlogCard";
 import PageTopSection from "@/components/common/PageTopSection";
@@ -12,7 +10,7 @@ export default function BlogPage() {
 
     return (
         <main>
-            <PageTopSection title="Blog" breadcrumbCurrent="Blog" breadcrumbHome="Blog" />
+            <PageTopSection title="Blogs" breadcrumbCurrent="Blog" breadcrumbHome="Home" />
 
             <section className="relative w-full bg-white py-8 lg:py-14 font-sans overflow-hidden">
                 <div className="max-w-[1380px] lg:w-[97%] xl:w-[95%] w-full mx-auto px-4">

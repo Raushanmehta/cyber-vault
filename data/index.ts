@@ -45,7 +45,6 @@ export type CyberVaultContactData = CyberVaultSections["contact"]["variants"]["C
 export type ContactInfoCard = CyberVaultContactData["infoCards"][number];
 export type CyberVaultGetAQuoteData = CyberVaultSections["getAQuote"]["variants"]["CyberVaultGetAQuote1"];
 export type CyberVaultPageTopData = CyberVaultSections["pageTopSection"]["variants"]["CyberVaultPageTop1"];
-export type CyberVaultThankYouData = unknown;
 
 // ── Canonical Mapped Site Data Object ──
 const sec = siteData.CyberVault.sections;
@@ -107,7 +106,6 @@ export const siteMap = {
   pageTopSection: sec.pageTopSection.variants.CyberVaultPageTop1,
   getAQuote: sec.getAQuote.variants.CyberVaultGetAQuote1,
   contact: sec.contact.variants.CyberVaultContact1,
-  thankYou: (sec as Record<string, any>).thankYou?.variants?.CyberVaultThankYou1,
 
   // Compatibility object so existing components importing `siteData.home.hero` don't break
   home: {

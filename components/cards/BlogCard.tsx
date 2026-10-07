@@ -37,13 +37,12 @@ export default function BlogCard({ post, index, setSelectedPost }: BlogCardProps
     return (
         <motion.div
             key={post.id}
-            data-cursor-text="Read"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
 
             onClick={() => setSelectedPost?.(post)}
-            className="group relative h-[300px] lg:h-[420px] rounded-xl overflow-hidden cursor-pointer  transition-all duration-500 flex flex-col justify-end border border-transparent hover:border-cyan-400/40"
+            className="group relative h-[300px] lg:h-[360px] rounded-xl overflow-hidden cursor-pointer  transition-all duration-500 flex flex-col justify-end border border-transparent hover:border-cyan-400/40"
         >
             {/* Background Image with Zoom on Hover */}
             <img

@@ -23,7 +23,6 @@ export default function TestimonialCard({ item }: { item: Testimonial }) {
     return (
         <div
             key={item.id}
-            data-cursor-card
             className="group relative bg-white rounded-3xl p-8 sm:p-10 border border-slate-100 hover:border-blue-200 transition-all duration-300 flex flex-col justify-between transform hover:-translate-y-2 cursor-pointer h-full">
             {/* Top Row: Stars & Quote Icon */}
             <div>

@@ -122,7 +122,6 @@ export default function ContactSection({ data: propData }: ContactSectionProps =
                             id="map"
                             whileHover={{ y: -4 }}
                             transition={{ duration: 0.3 }}
-                            data-cursor-card
                             className="w-full h-[320px] sm:h-[380px] rounded-xl overflow-hidden border border-slate-200/80 shadow-md relative"
                         >
                             <iframe

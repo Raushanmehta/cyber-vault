@@ -56,9 +56,7 @@ export default function AboutSection({ data: propData, onLearnMoreClick }: About
                             <div className="hidden sm:block absolute top-2 left-2 right-2 bottom-12 border-2 border-blue-400/30 rounded-3xl -z-10 pointer-events-none" />
 
                             {/* Primary Top Image */}
-                            <div
-                                data-cursor-card
-                                className="relative z-10 w-full rounded-3xl sm:rounded-4xl overflow-hidden shadow-2xl border-4 border-white bg-slate-900 group">
+                            <div className="relative z-10 w-full rounded-3xl sm:rounded-4xl overflow-hidden shadow-2xl border-4 border-white bg-slate-900 group">
                                 <Image
                                     src={data.images.primary.src}
                                     alt={data.images.primary.alt}
@@ -74,7 +72,6 @@ export default function AboutSection({ data: propData, onLearnMoreClick }: About
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.7, delay: 0.3 }}
-                                data-cursor-card
                                 className="w-full lg:w-[65%] relative lg:absolute lg:-bottom-26 lg:right-10 mt-4 sm:mt-6 lg:mt-0 z-20 rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-900 group"
                             >
                                 <Image
@@ -94,7 +91,6 @@ export default function AboutSection({ data: propData, onLearnMoreClick }: About
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.6, delay: 0.5 }}
                                 whileHover={{ y: -6, boxShadow: "0 25px 35px -5px rgba(15, 23, 42, 0.4)" }}
-                                data-cursor-text={data.experienceBadge.years}
                                 className="absolute -bottom-7 sm:-bottom-8 left-2 sm:left-4 z-30 bg-[#021338] text-white p-3 sm:p-4 rounded-2xl shadow-2xl border border-blue-700/50 flex items-center space-x-3 sm:space-x-4 max-w-[210px] sm:max-w-[240px] cursor-pointer"
                             >
                                 <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-blue-600 flex items-center justify-center text-white shrink-0 shadow-lg shadow-blue-600/40">
@@ -161,7 +157,6 @@ export default function AboutSection({ data: propData, onLearnMoreClick }: About
                                 return (
                                     <motion.div
                                         key={feature.title}
-                                        data-cursor-card
                                         whileHover={{ y: -6, boxShadow: "0 20px 35px -5px rgba(37, 99, 235, 0.15)" }}
                                         className="group bg-slate-50/90 border border-slate-200/80 hover:border-blue-400 p-5 rounded-2xl transition-all duration-300 flex flex-col justify-between cursor-pointer"
                                     >
@@ -185,7 +180,6 @@ export default function AboutSection({ data: propData, onLearnMoreClick }: About
                         <div className="pt-2">
                             <motion.button
                                 onClick={handleButtonClick}
-                                data-cursor-text="About"
                                 whileHover={{ scale: 1.04, boxShadow: "0 10px 25px -5px rgba(37, 99, 235, 0.4)" }}
                                 whileTap={{ scale: 0.96 }}
                                 className="group inline-flex items-center space-x-4 bg-gradient-to-r from-blue-700 via-blue-600 to-indigo-600 hover:from-blue-600 hover:to-indigo-500 text-white py-3.5 px-7 rounded-full shadow-lg shadow-blue-600/30 transition-all duration-300 cursor-pointer"

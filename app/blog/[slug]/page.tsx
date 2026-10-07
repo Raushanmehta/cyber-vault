@@ -1,5 +1,5 @@
 import PageTopSection from "@/components/common/PageTopSection";
-import BlogDetailSection from "@/pages/BlogDetailSection";
+import BlogDetailSection from "@/sections/BlogDetailSection";
 import { siteMap } from "@/data";
 
 interface BlogDetailPageProps {

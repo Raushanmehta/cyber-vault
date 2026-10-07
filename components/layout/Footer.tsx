@@ -56,7 +56,7 @@ export default function Footer() {
                     {/* Column 1: Brand Info */}
                     <div className="lg:col-span-4 space-y-6">
                         {/* Brand Logo Link */}
-                        <Link href={data.brand.logo.href} onClick={handleFooterLinkClick} className="inline-block" data-cursor-text="Home">
+                        <Link href={data.brand.logo.href} onClick={handleFooterLinkClick} className="inline-block">
                             <Image
                                 src={data.brand.logo.src}
                                 width={data.brand.logo.width}
@@ -201,7 +201,6 @@ export default function Footer() {
                             <Link
                                 href={data.getInTouch.actionButton.href}
                                 onClick={handleFooterLinkClick}
-                                data-cursor-text="Quote"
                                 className="w-full flex items-center justify-between bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-400 hover:from-blue-500 hover:to-cyan-300 text-white py-3 px-5 rounded-full shadow-lg shadow-blue-600/30 group transition-all duration-300 cursor-pointer"
                             >
                                 <span className="text-sm lg:text-base tracking-wide font-medium">{data.getInTouch.actionButton.label}</span>

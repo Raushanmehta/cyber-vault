@@ -16,7 +16,6 @@ export default function ServiceCard({ service, index, handleCardClick }: Service
     return (
         <motion.div
             key={service.id}
-            data-cursor-text="Explore"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
@@ -96,7 +95,6 @@ export default function ServiceCard({ service, index, handleCardClick }: Service
                             onClick={(e) => {
                                 e.stopPropagation();
                             }}
-                            data-cursor-text="Blog"
                             className={`w-8 h-8 sm:w-9 sm:h-9 rounded-full shrink-0 flex items-center justify-center transition-all duration-300 group-hover:scale-110 cursor-pointer ${service.isHighlighted
                                 ? 'bg-white text-blue-600 shadow-md group-hover:bg-cyan-300'
                                 : 'bg-blue-600 text-white shadow-md shadow-blue-600/30 group-hover:bg-white group-hover:text-blue-600'

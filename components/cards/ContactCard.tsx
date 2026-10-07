@@ -24,7 +24,6 @@ export default function ContactCard({ card, idx = 0 }: ContactCardProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.45, delay: idx * 0.1 }}
-            data-cursor-card
             className="group bg-white rounded-xl p-6 shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-slate-100/80 flex items-start space-x-4 transition-all duration-300 cursor-pointer hover:border-blue-200 hover:shadow-lg"
         >
             <div className="w-14 h-14 rounded-full bg-blue-100/80 flex items-center justify-center flex-shrink-0 text-blue-600 group-hover:scale-110 group-hover:rotate-6 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm">

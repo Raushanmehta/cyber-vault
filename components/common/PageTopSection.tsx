@@ -35,7 +35,7 @@ export default function PageTopSection({
                     initial={{ opacity: 0, y: -15 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, ease: "easeOut" }}
-                    className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#0d1b3e] tracking-tight mb-4"
+                    className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#0d1b3e] tracking-tight mb-4"
                 >
                     {title}
                 </motion.h1>

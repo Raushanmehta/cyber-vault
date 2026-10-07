@@ -80,8 +80,7 @@ export default function GetAQuoteSection({ data: propData }: GetAQuoteSectionPro
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5 }}
-                        className="lg:col-span-7 bg-[#edf4ff]/75 rounded-xl p-6 sm:p-10 relative overflow-hidden backdrop-blur-sm"
-                    >
+                        className="lg:col-span-7 bg-[#edf4ff]/75 rounded-xl p-6 sm:p-10 relative overflow-hidden backdrop-blur-sm">
                         {/* Background Light Graphic Orbs */}
                         <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-blue-200/40 to-transparent rounded-full blur-2xl pointer-events-none" />
 
@@ -295,7 +294,6 @@ export default function GetAQuoteSection({ data: propData }: GetAQuoteSectionPro
                                             viewport={{ once: true }}
                                             transition={{ duration: 0.4, delay: index * 0.1 }}
                                             whileHover={{ x: 6, backgroundColor: "#ffffff", boxShadow: "0 10px 25px -5px rgba(37,99,235,0.12)" }}
-                                            data-cursor-card
                                             className="group bg-white rounded-xl p-4 border border-slate-100/80 shadow-[0_4px_20px_rgba(0,0,0,0.03)] flex items-center space-x-4 transition-all duration-300 cursor-pointer"
                                         >
                                             <div className="w-14 h-14 rounded-full bg-blue-100/80 flex items-center justify-center flex-shrink-0 text-blue-600 group-hover:scale-110 group-hover:rotate-6 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm">
@@ -318,7 +316,6 @@ export default function GetAQuoteSection({ data: propData }: GetAQuoteSectionPro
                         {/* Bottom Cyber Security Image Container */}
                         <motion.div
                             transition={{ duration: 0.3 }}
-                            data-cursor-card
                             className="group relative w-full h-[220px] sm:h-[260px] rounded-xl overflow-hidden border border-slate-200/80 shadow-md cursor-pointer"
                         >
                             <Image

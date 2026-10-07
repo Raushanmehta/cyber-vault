@@ -39,11 +39,10 @@ export default function PortfolioSection({ data: propData }: PortfolioSectionPro
 
             {/* Portfolio Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[1380px] lg:w-[97%] xl:w-[95%] w-full mx-auto px-4 mt-6">
-                {data.projects.map((item, index) => (
+                {data.projects.map((item) => (
                     <PortfolioCard
                         key={item.id}
                         item={item}
-                        index={index}
                     />
                 ))}
             </div>
