@@ -5,7 +5,6 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import TopBar from "@/components/layout/Topbar";
 import SmoothScroll from "@/components/common/SmoothScroll";
-import CustomCursor from "@/components/common/CustomCursor";
 
 const ramabhadra = Ramabhadra({
   weight: "400",
@@ -29,7 +28,6 @@ export default function RootLayout({
       lang="en"
       className={`${ramabhadra.variable} ${ramabhadra.className} h-full antialiased`}>
       <body className="min-h-full flex flex-col font-sans">
-        <CustomCursor />
         <SmoothScroll>
           <TopBar email="info@xyz.com" contactUrl="/contact" />
           <header className="sticky top-0 z-50 w-full shadow-sm">

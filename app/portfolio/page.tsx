@@ -9,7 +9,7 @@ export default function PortfolioPage() {
 
     return (
         <main>
-            <PageTopSection title={portfolioData.tagline} breadcrumbCurrent="Portfolio" breadcrumbHome="Home" />
+            <PageTopSection title={"Portfolio"} breadcrumbCurrent="Portfolio" breadcrumbHome="Home" />
             <PortfolioSection data={portfolioData} />
         </main>
     );

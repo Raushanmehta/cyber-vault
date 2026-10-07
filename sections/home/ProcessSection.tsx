@@ -108,7 +108,7 @@ export default function ProcessSection({ data: propData, onContactClick }: Proce
                 </div>
 
                 {/* Process Cards Grid */}
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-0 relative">
+                <div className="grid grid-cols-1 lg:grid-cols-3  lg:gap-0 relative">
 
                     {data.steps.map((step, index) => {
                         const IconComponent = processIconMap[step.icon] || Search;

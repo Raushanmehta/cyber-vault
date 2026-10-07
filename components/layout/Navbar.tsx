@@ -145,7 +145,7 @@ export default function Navbar({
                         whileTap={{ scale: 0.9 }}
                         onClick={() => setIsOpen(!isOpen)}
                         aria-label="Toggle Menu"
-                        className="text-gray-800 hover:bg-gray-100 p-2 rounded-xl focus:outline-none transition-colors"
+                        className="text-gray-800  focus:outline-none transition-colors"
                     >
                         {isOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
                     </motion.button>

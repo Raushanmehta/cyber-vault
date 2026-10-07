@@ -31,7 +31,7 @@ export default function WhyChooseUsSection({ data: propData }: WhyChooseUsSectio
     return (
         <section className="relative w-full bg-white py-8 lg:py-14 font-sans overflow-hidden">
             <div className="max-w-[1380px] lg:w-[97%] xl:w-[95%] w-full mx-auto px-4 relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 lg:gap-12 items-center">
 
                     {/* Left Column (7 Cols): Content, Highlights, and 2x2 Grid */}
                     <motion.div
@@ -39,7 +39,7 @@ export default function WhyChooseUsSection({ data: propData }: WhyChooseUsSectio
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
-                        className="lg:col-span-7 space-y-6"
+                        className="lg:col-span-7 space-y-"
                     >
                         {/* Header Tagline & Headline */}
                         <div>

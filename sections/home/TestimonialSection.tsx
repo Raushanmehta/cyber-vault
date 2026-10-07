@@ -63,7 +63,7 @@ export default function TestimonialSection({ data: propData }: TestimonialSectio
                 </p>
 
                 {/* Carousel Container */}
-                <div className="relative mt-8">
+                <div className="relative  lg:mt-2">
                     <Carousel
                         setApi={setApi}
                         plugins={[autoplayPlugin.current]}
@@ -94,7 +94,7 @@ export default function TestimonialSection({ data: propData }: TestimonialSectio
 
                 {/* Carousel Pagination Dots */}
                 {count > 1 && (
-                    <div className="flex items-center justify-center space-x-2.5 mt-4">
+                    <div className="flex items-center justify-center space-x-2.5 mt-2 lg:mt-4">
                         {Array.from({ length: count }).map((_, idx) => (
                             <button
                                 key={idx}

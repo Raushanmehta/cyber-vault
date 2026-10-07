@@ -1,4 +1,5 @@
 
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRight, Bug, Search, Flame, Database, Lock, Cloud, ShieldCheck, Settings } from 'lucide-react';
 import type { ServiceItem } from '@/sections/home/ServiceSection';
@@ -90,12 +91,19 @@ export default function ServiceCard({ service, index, handleCardClick }: Service
                         </h3>
 
                         {/* Circular Action Arrow Button */}
-                        <div className={`w-8 h-8 sm:w-9 sm:h-9 rounded-full shrink-0 flex items-center justify-center transition-all duration-300 group-hover:scale-110 ${service.isHighlighted
-                            ? 'bg-white text-blue-600 shadow-md group-hover:bg-cyan-300'
-                            : 'bg-blue-600 text-white shadow-md shadow-blue-600/30 group-hover:bg-white group-hover:text-blue-600'
-                            }`}>
+                        <Link
+                            href="/blog"
+                            onClick={(e) => {
+                                e.stopPropagation();
+                            }}
+                            data-cursor-text="Blog"
+                            className={`w-8 h-8 sm:w-9 sm:h-9 rounded-full shrink-0 flex items-center justify-center transition-all duration-300 group-hover:scale-110 cursor-pointer ${service.isHighlighted
+                                ? 'bg-white text-blue-600 shadow-md group-hover:bg-cyan-300'
+                                : 'bg-blue-600 text-white shadow-md shadow-blue-600/30 group-hover:bg-white group-hover:text-blue-600'
+                                }`}
+                        >
                             <ArrowRight className="w-4 h-4 stroke-[2.5] group-hover:translate-x-0.5 transition-transform" />
-                        </div>
+                        </Link>
                     </div>
 
                     {/* Description */}

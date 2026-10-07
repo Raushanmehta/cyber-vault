@@ -44,7 +44,7 @@ export default function ServicesSection({ data: propData, onEnquireClick }: Serv
         if (onEnquireClick) {
             onEnquireClick(service.title);
         } else if (typeof window !== 'undefined') {
-            window.location.href = '/get-a-quote';
+            window.location.href = `/services/${service.id}`;
         }
     };
 

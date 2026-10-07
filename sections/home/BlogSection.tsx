@@ -1,8 +1,9 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { X } from "lucide-react";
+import { X, ArrowRight } from "lucide-react";
 import BlogCard, { type BlogPost } from "@/components/cards/BlogCard";
 import {
     Carousel,
@@ -56,7 +57,7 @@ export default function BlogSection({ data: propData }: BlogSectionProps = {}) {
                 </h2>
 
                 {/* Subtitle */}
-                <p className="text-center text-slate-500 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed mb-4">
+                <p className="text-center text-slate-500 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed mb-2">
                     {data.description}
                 </p>
 
@@ -95,7 +96,7 @@ export default function BlogSection({ data: propData }: BlogSectionProps = {}) {
 
                 {/* Carousel Pagination Dots */}
                 {count > 1 && (
-                    <div className="flex items-center justify-center space-x-2.5 mt-4">
+                    <div className="flex items-center justify-center space-x-2.5 mt-2 lg:mt-4">
                         {Array.from({ length: count }).map((_, idx) => (
                             <button
                                 key={idx}
@@ -159,12 +160,19 @@ export default function BlogSection({ data: propData }: BlogSectionProps = {}) {
                                 <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
                                     {selectedPost.excerpt}
                                 </p>
-                                <div className="mt-8 pt-4 border-t border-slate-100 flex justify-end">
+                                <div className="mt-8 pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
+                                    <Link
+                                        href={`/blog/${selectedPost.slug || selectedPost.id}`}
+                                        className="inline-flex items-center gap-2 px-5 py-2.5 bg-blue-600 text-white rounded-full font-medium text-sm hover:bg-blue-700 transition-colors shadow-md shadow-blue-500/20"
+                                    >
+                                        <span>Read Full Article</span>
+                                        <ArrowRight className="w-4 h-4" />
+                                    </Link>
                                     <button
                                         onClick={() => setSelectedPost(null)}
-                                        className="px-6 py-2.5 bg-blue-600 text-white rounded-full font-medium hover:bg-blue-700 transition-colors"
+                                        className="px-5 py-2.5 bg-slate-100 text-slate-700 rounded-full font-medium text-sm hover:bg-slate-200 transition-colors"
                                     >
-                                        Close Article
+                                        Close
                                     </button>
                                 </div>
                             </div>

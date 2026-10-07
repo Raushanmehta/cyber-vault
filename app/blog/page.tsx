@@ -1,15 +1,14 @@
 "use client";
 
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { X } from "lucide-react";
-import BlogCard, { type BlogPost } from "@/components/cards/BlogCard";
+import React from "react";
+import { useRouter } from "next/navigation";
+import BlogCard from "@/components/cards/BlogCard";
 import PageTopSection from "@/components/common/PageTopSection";
 import { siteMap } from "@/data";
 
 export default function BlogPage() {
     const data = siteMap.blog;
-    const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
+    const router = useRouter();
 
     return (
         <main>
@@ -47,7 +46,7 @@ export default function BlogPage() {
                             key={post.id}
                             post={post}
                             index={index}
-                            setSelectedPost={setSelectedPost}
+                            setSelectedPost={(p) => router.push(`/blog/${p.slug || p.id}`)}
                         />
                     ))}
                 </div>

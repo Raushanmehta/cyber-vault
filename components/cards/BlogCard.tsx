@@ -1,15 +1,30 @@
 import React from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { ArrowRight, Calendar } from "lucide-react";
 
 export interface BlogPost {
     id: number;
+    slug?: string;
+    category?: string;
     date: string;
     title: string;
     image: string;
     excerpt: string;
     author: string;
+    authorRole?: string;
     readTime: string;
+    content?: {
+        intro?: string;
+        sections?: Array<{
+            title: string;
+            paragraph: string;
+            checklist?: string[];
+            secondaryImage?: string;
+        }>;
+        quote?: string;
+        conclusion?: string;
+    };
 }
 
 interface BlogCardProps {
@@ -28,7 +43,7 @@ export default function BlogCard({ post, index, setSelectedPost }: BlogCardProps
             viewport={{ once: true }}
 
             onClick={() => setSelectedPost?.(post)}
-            className="group relative h-[420px] rounded-[32px] overflow-hidden cursor-pointer  transition-all duration-500 flex flex-col justify-end border border-transparent hover:border-cyan-400/40"
+            className="group relative h-[300px] lg:h-[420px] rounded-xl overflow-hidden cursor-pointer  transition-all duration-500 flex flex-col justify-end border border-transparent hover:border-cyan-400/40"
         >
             {/* Background Image with Zoom on Hover */}
             <img
@@ -56,12 +71,14 @@ export default function BlogCard({ post, index, setSelectedPost }: BlogCardProps
                         {post.title}
                     </h3>
 
-                    <button
+                    <Link
+                        href={`/blog/${post.slug || post.id}`}
+                        onClick={(e) => e.stopPropagation()}
                         aria-label={`Read ${post.title}`}
                         className="flex-shrink-0 w-11 h-11 rounded-full bg-white text-blue-600 flex items-center justify-center shadow-md group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 transform group-hover:scale-110"
                     >
                         <ArrowRight className="w-5 h-5" />
-                    </button>
+                    </Link>
                 </div>
             </div>
         </motion.div>

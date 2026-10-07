@@ -51,7 +51,7 @@ export default function Footer() {
 
             {/* Main Footer Container */}
             <div className="max-w-[1380px] lg:w-[97%] xl:w-[95%] w-full mx-auto px-4 pt-16 pb-12 relative z-10">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 lg:gap-8">
 
                     {/* Column 1: Brand Info */}
                     <div className="lg:col-span-4 space-y-6">
@@ -100,7 +100,7 @@ export default function Footer() {
                             <h3 className="text-white font-medium text-xl">{data.quickLinks.title}</h3>
                             <div className="absolute bottom-0 left-0 w-8 h-[3px] bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full" />
                         </div>
-                        <ul className="space-y-3 mt-4">
+                        <ul className="space-y-3 mt-1 lg:mt-4">
                             {data.quickLinks.links.map((link) => (
                                 <li key={link.label}>
                                     <Link
@@ -122,7 +122,7 @@ export default function Footer() {
                             <h3 className="text-white font-medium text-xl">{data.servicesLinks.title}</h3>
                             <div className="absolute bottom-0 left-0 w-8 h-[3px] bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full" />
                         </div>
-                        <ul className="space-y-3 mt-4">
+                        <ul className="space-y-3 mt-1 lg:mt-4">
                             {data.servicesLinks.links.map((link) => (
                                 <li key={link.label}>
                                     <Link
@@ -144,7 +144,7 @@ export default function Footer() {
                             <h3 className="text-white font-medium text-xl">{data.resourceLinks.title}</h3>
                             <div className="absolute bottom-0 left-0 w-8 h-[3px] bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full" />
                         </div>
-                        <ul className="space-y-3 mt-4">
+                        <ul className="space-y-3 mt-1 lg:mt-4">
                             {data.resourceLinks.links.map((link) => (
                                 <li key={link.label}>
                                     <Link
@@ -167,12 +167,12 @@ export default function Footer() {
                             <div className="absolute bottom-0 left-0 w-8 h-[3px] bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full" />
                         </div>
 
-                        <ul className="space-y-3 mt-4">
+                        <ul className="space-y-3 mt-1 lg:mt-4">
                             <li className="flex items-start space-x-3">
                                 <div className="w-12 h-12 rounded-full bg-blue-950 border border-blue-800/80 flex items-center justify-center text-cyan-400 shrink-0 mt-0.5">
                                     <AddressIcon className="w-6 h-6" />
                                 </div>
-                                <span className="text-gray-300 leading-tight text-xs sm:text-sm whitespace-pre-line">
+                                <span className="text-gray-300 leading-tight text-sm lg:text-base whitespace-pre-line">
                                     {data.getInTouch.address.text}
                                 </span>
                             </li>
@@ -181,7 +181,7 @@ export default function Footer() {
                                 <div className="w-12 h-12 rounded-full bg-blue-950 border border-blue-800/80 flex items-center justify-center text-cyan-400 shrink-0">
                                     <PhoneIcon className="w-6 h-6" />
                                 </div>
-                                <a href={data.getInTouch.phone.href} className="text-gray-300 hover:text-white transition-colors text-xs sm:text-sm">
+                                <a href={data.getInTouch.phone.href} className="text-gray-300 hover:text-white transition-colors text-sm lg:text-base">
                                     {data.getInTouch.phone.text}
                                 </a>
                             </li>
@@ -190,7 +190,7 @@ export default function Footer() {
                                 <div className="w-12 h-12 rounded-full bg-blue-950 border border-blue-800/80 flex items-center justify-center text-cyan-400 shrink-0">
                                     <EmailIcon className="w-6 h-6" />
                                 </div>
-                                <a href={data.getInTouch.email.href} className="text-gray-300 hover:text-white transition-colors truncate text-xs sm:text-sm">
+                                <a href={data.getInTouch.email.href} className="text-gray-300 hover:text-white transition-colors truncate text-sm lg:text-base">
                                     {data.getInTouch.email.text}
                                 </a>
                             </li>

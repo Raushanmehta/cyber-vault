@@ -2,14 +2,10 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import {
-    ShieldCheck,
-    Settings,
-    Users,
-    ArrowRight
-} from 'lucide-react';
+import { ShieldCheck, Settings, Users, ArrowRight } from 'lucide-react';
 import AnimatedHeading from '@/components/common/AnimatedHeading';
 import { siteMap, type CyberVaultAboutData } from '@/data';
+import Image from 'next/image';
 
 const aboutIconMap: Record<string, React.ComponentType<{ className?: string }>> = {
     ShieldCheck,
@@ -46,29 +42,29 @@ export default function AboutSection({ data: propData, onLearnMoreClick }: About
             <div className="max-w-[1380px] lg:w-[97%] xl:w-[95%] w-full mx-auto px-4 relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
-                    {/* ==================== LEFT SHOWCASE COLUMN ==================== */}
+                    {/*LEFT SHOWCASE COLUMN */}
                     <motion.div
                         initial={{ opacity: 0, x: -40 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true, margin: "-100px" }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
-                        className="lg:col-span-6 relative"
-                    >
-                        <div className="relative w-full max-w-lg mx-auto lg:max-w-none">
+                        className="lg:col-span-6 relative">
+                        <div className="relative w-full lg:mb-0">
 
                             {/* Outer Decorative Blue Frame Accent */}
-                            <div className="absolute -top-5 -left-5 w-40 h-40 bg-blue-600 rounded-4xl -z-10" />
-                            <div className="absolute top-2 left-2 right-2 bottom-12 border-2 border-blue-400/30 rounded-3xl -z-10 pointer-events-none" />
+                            <div className="absolute -top-3 -left-3 sm:-top-5 sm:-left-5 w-28 sm:w-40 h-28 sm:h-40 bg-blue-600 rounded-3xl sm:rounded-4xl -z-10" />
+                            <div className="hidden sm:block absolute top-2 left-2 right-2 bottom-12 border-2 border-blue-400/30 rounded-3xl -z-10 pointer-events-none" />
 
                             {/* Primary Top Image */}
                             <div
                                 data-cursor-card
-                                className="relative z-10 rounded-4xl overflow-hidden shadow-2xl border-4 border-white bg-slate-900 group"
-                            >
-                                <img
+                                className="relative z-10 w-full rounded-3xl sm:rounded-4xl overflow-hidden shadow-2xl border-4 border-white bg-slate-900 group">
+                                <Image
                                     src={data.images.primary.src}
                                     alt={data.images.primary.alt}
-                                    className="w-full h-[340px] lg:h-[440px] object-cover transition-transform duration-700 ease-out"
+                                    width={700}
+                                    height={500}
+                                    className="w-full h-[280px] sm:h-[360px] md:h-[420px] lg:h-[440px] object-cover transition-transform duration-700 ease-out"
                                 />
                             </div>
 
@@ -79,12 +75,14 @@ export default function AboutSection({ data: propData, onLearnMoreClick }: About
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.7, delay: 0.3 }}
                                 data-cursor-card
-                                className="relative lg:absolute lg:-bottom-26 right-0 lg:right-10 w-[85%] sm:w-[65%] mt-6 lg:mt-0 z-20 rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-900 group"
+                                className="w-full lg:w-[65%] relative lg:absolute lg:-bottom-26 lg:right-10 mt-4 sm:mt-6 lg:mt-0 z-20 rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-900 group"
                             >
-                                <img
+                                <Image
                                     src={data.images.secondary.src}
                                     alt={data.images.secondary.alt}
-                                    className="w-full h-[200px] lg:h-[230px] object-cover group-hover:scale-108 transition-transform duration-700 ease-out"
+                                    width={500}
+                                    height={350}
+                                    className="w-full h-[190px] sm:h-[230px] lg:h-[230px] object-cover transition-transform duration-700 ease-out"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-tr from-blue-950/60 via-transparent to-transparent pointer-events-none" />
                             </motion.div>
@@ -97,23 +95,23 @@ export default function AboutSection({ data: propData, onLearnMoreClick }: About
                                 transition={{ duration: 0.6, delay: 0.5 }}
                                 whileHover={{ y: -6, boxShadow: "0 25px 35px -5px rgba(15, 23, 42, 0.4)" }}
                                 data-cursor-text={data.experienceBadge.years}
-                                className="absolute -bottom-8 left-2 sm:left-4 z-30 bg-[#021338] text-white p-4 rounded-2xl shadow-2xl border border-blue-700/50 flex items-center space-x-4 max-w-[240px] cursor-pointer"
+                                className="absolute -bottom-7 sm:-bottom-8 left-2 sm:left-4 z-30 bg-[#021338] text-white p-3 sm:p-4 rounded-2xl shadow-2xl border border-blue-700/50 flex items-center space-x-3 sm:space-x-4 max-w-[210px] sm:max-w-[240px] cursor-pointer"
                             >
-                                <div className="w-14 h-14 rounded-full bg-blue-600 flex items-center justify-center text-white shrink-0 shadow-lg shadow-blue-600/40">
-                                    <BadgeIcon className="w-8 h-8" />
+                                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-blue-600 flex items-center justify-center text-white shrink-0 shadow-lg shadow-blue-600/40">
+                                    <BadgeIcon className="w-6 h-6 sm:w-8 sm:h-8" />
                                 </div>
                                 <div>
-                                    <div className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white leading-none">
+                                    <div className="text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight text-white leading-none">
                                         {data.experienceBadge.years}
                                     </div>
-                                    <div className="text-xs sm:text-sm text-blue-200 mt-1 leading-snug">
+                                    <div className="text-[11px] sm:text-xs lg:text-sm text-blue-200 mt-1 leading-snug">
                                         {data.experienceBadge.label}
                                     </div>
                                 </div>
                             </motion.div>
 
                             {/* Bottom Decorative 4x4 Dot Matrix Grid Pattern */}
-                            <div className="absolute -bottom-16 left-8 z-0 grid grid-cols-4 gap-2.5 pointer-events-none opacity-80">
+                            <div className="hidden sm:grid absolute -bottom-14 lg:-bottom-16 left-6 lg:left-8 z-0 grid-cols-4 gap-2.5 pointer-events-none opacity-80">
                                 {[...Array(16)].map((_, i) => (
                                     <div key={i} className="w-2 h-2 rounded-full bg-blue-400/50" />
                                 ))}
@@ -122,13 +120,13 @@ export default function AboutSection({ data: propData, onLearnMoreClick }: About
                         </div>
                     </motion.div>
 
-                    {/* ==================== RIGHT CONTENT COLUMN ==================== */}
+                    {/* RIGHT CONTENT COLUMN */}
                     <motion.div
                         initial={{ opacity: 0, x: 40 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true, margin: "-100px" }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
-                        className="lg:col-span-6 space-y-4 pt-6 lg:pt-0"
+                        className="lg:col-span-6 space-y-4 lg:pt-0"
                     >
 
                         {/* Top Subheading Tagline */}

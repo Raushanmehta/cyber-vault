@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import { PortfolioCard } from "@/components/cards/PortfolioCard";
 import { siteMap, type CyberVaultPortfolioData } from "@/data";
 
@@ -31,13 +32,13 @@ export default function PortfolioSection({ data: propData }: PortfolioSectionPro
                 </h2>
 
                 {/* Subtitle */}
-                <p className="text-center text-slate-500 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed mb-4">
+                <p className="text-center text-slate-500 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed mb-6">
                     {data.description}
                 </p>
             </div>
 
             {/* Portfolio Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-[1380px] lg:w-[97%] xl:w-[95%] w-full mx-auto px-4 mt-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[1380px] lg:w-[97%] xl:w-[95%] w-full mx-auto px-4 mt-6">
                 {data.projects.map((item, index) => (
                     <PortfolioCard
                         key={item.id}
