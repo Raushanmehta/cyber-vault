@@ -40,7 +40,7 @@ export default function AboutSection({ data: propData, onLearnMoreClick }: About
             <div className="absolute bottom-10 -left-20 w-80 h-80 bg-cyan-100/50 rounded-full blur-3xl pointer-events-none" />
 
             <div className="max-w-[1380px] lg:w-[97%] xl:w-[95%] w-full mx-auto px-4 relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
 
                     {/*LEFT SHOWCASE COLUMN */}
                     <motion.div

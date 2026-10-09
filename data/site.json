@@ -219,7 +219,7 @@
               }
             ],
             "actionButton": {
-              "label": "Enquire Now",
+              "label": "Get a Quote",
               "href": "/get-a-quote",
               "icon": "ArrowRight"
             }
@@ -243,7 +243,7 @@
             },
             "description": "Protect your business from digital threats with cutting-edge cybersecurity solutions—24/7 monitoring, penetration testing, and expert-driven defense strategies.",
             "ctaButton": {
-              "label": "Enquire Now",
+              "label": "Get a Quote",
               "href": "/get-a-quote",
               "icon": "ArrowRight"
             },

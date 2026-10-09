@@ -181,7 +181,7 @@ export default function HeroSection({ data: propData, onEnquireClick }: HeroSect
                     </div>
 
                     {/* Right Column: Interactive Live Security Scanner & Telemetry HUD */}
-                    <div className="lg:col-span-6 relative flex flex-col items-center justify-center pt-8 lg:pt-0 min-h-[440px] lg:min-h-[520px]">
+                    <div className="hidden lg:flex lg:col-span-6 relative flex-col items-center justify-center pt-8 lg:pt-0 min-h-[440px] lg:min-h-[520px]">
 
                         {/* Ambient Hologram Glow around central area */}
                         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">

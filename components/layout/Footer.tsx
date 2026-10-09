@@ -85,9 +85,9 @@ export default function Footer() {
                                         aria-label={social.name}
                                         whileHover={{ scale: 1.15, backgroundColor: '#1e3a8a', borderColor: '#38bdf8' }}
                                         whileTap={{ scale: 0.9 }}
-                                        className="w-14 h-14 rounded-full bg-blue-950/80 border border-blue-800/60 flex items-center justify-center text-blue-200 hover:text-white transition-colors shadow-md"
+                                        className="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-blue-950/80 border border-blue-800/60 flex items-center justify-center text-blue-200 hover:text-white transition-colors shadow-md"
                                     >
-                                        <Icon className="w-7 h-7" />
+                                        <Icon className="lg:w-6 lg:h-6 w-5 h-5" />
                                     </motion.a>
                                 );
                             })}
@@ -169,8 +169,8 @@ export default function Footer() {
 
                         <ul className="space-y-3 mt-1 lg:mt-4">
                             <li className="flex items-start space-x-3">
-                                <div className="w-12 h-12 rounded-full bg-blue-950 border border-blue-800/80 flex items-center justify-center text-cyan-400 shrink-0 mt-0.5">
-                                    <AddressIcon className="w-6 h-6" />
+                                <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-blue-950 border border-blue-800/80 flex items-center justify-center text-cyan-400 shrink-0 mt-0.5">
+                                    <AddressIcon className="lg:w-6 lg:h-6 w-5 h-5" />
                                 </div>
                                 <span className="text-gray-300 leading-tight text-sm lg:text-base whitespace-pre-line">
                                     {data.getInTouch.address.text}
@@ -178,8 +178,8 @@ export default function Footer() {
                             </li>
 
                             <li className="flex items-center space-x-3">
-                                <div className="w-12 h-12 rounded-full bg-blue-950 border border-blue-800/80 flex items-center justify-center text-cyan-400 shrink-0">
-                                    <PhoneIcon className="w-6 h-6" />
+                                <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-blue-950 border border-blue-800/80 flex items-center justify-center text-cyan-400 shrink-0">
+                                    <PhoneIcon className="lg:w-6 lg:h-6 w-5 h-5" />
                                 </div>
                                 <a href={data.getInTouch.phone.href} className="text-gray-300 hover:text-white transition-colors text-sm lg:text-base">
                                     {data.getInTouch.phone.text}
@@ -187,8 +187,8 @@ export default function Footer() {
                             </li>
 
                             <li className="flex items-center space-x-3">
-                                <div className="w-12 h-12 rounded-full bg-blue-950 border border-blue-800/80 flex items-center justify-center text-cyan-400 shrink-0">
-                                    <EmailIcon className="w-6 h-6" />
+                                <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-blue-950 border border-blue-800/80 flex items-center justify-center text-cyan-400 shrink-0">
+                                    <EmailIcon className="lg:w-6 lg:h-6 w-5 h-5" />
                                 </div>
                                 <a href={data.getInTouch.email.href} className="text-gray-300 hover:text-white transition-colors truncate text-sm lg:text-base">
                                     {data.getInTouch.email.text}
