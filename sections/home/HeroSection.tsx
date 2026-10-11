@@ -5,7 +5,6 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import {
     ArrowRight,
-    Star,
     Zap,
 } from 'lucide-react';
 import { FaShieldAlt, FaUserFriends } from 'react-icons/fa';
@@ -152,30 +151,6 @@ export default function HeroSection({ data: propData, onEnquireClick }: HeroSect
                                     <CtaIcon className="w-4 h-4 text-blue-600 stroke-[2.5]" />
                                 </div>
                             </motion.button>
-                        </motion.div>
-
-                        {/* Bottom Trust Bar (Google Rating & Reviews) */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 0.5 }}
-                            className="pt-6 border-t border-slate-800/80 flex flex-wrap items-center gap-3 sm:gap-4 text-xs sm:text-sm text-gray-300"
-                        >
-                            <div className="flex items-center space-x-2">
-                                <span className="text-white">{data.trustBar.ratingLabel}</span>
-                                <span className="text-white text-base">{data.trustBar.score}</span>
-                                <div className="flex items-center text-amber-400">
-                                    {[...Array(data.trustBar.starsCount)].map((_, i) => (
-                                        <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                                    ))}
-                                </div>
-                            </div>
-
-                            <div className="hidden sm:block h-4 w-[1px] bg-slate-700" />
-
-                            <div className="text-gray-400">
-                                {data.trustBar.reviewPrefix} <span className="text-white">{data.trustBar.reviewsCount}</span>
-                            </div>
                         </motion.div>
 
                     </div>

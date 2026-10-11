@@ -41,7 +41,6 @@ export default function Footer() {
     const AddressIcon = footerIconMap[data.getInTouch.address.icon] || FaMapMarkerAlt;
     const PhoneIcon = footerIconMap[data.getInTouch.phone.icon] || BiSolidPhoneCall;
     const EmailIcon = footerIconMap[data.getInTouch.email.icon] || IoMdMail;
-    const ButtonIcon = footerIconMap[data.getInTouch.actionButton.icon] || ArrowRight;
 
     return (
         <footer className="relative bg-[#020617] text-white overflow-hidden font-sans border-t border-blue-900/40">
@@ -195,20 +194,6 @@ export default function Footer() {
                                 </a>
                             </li>
                         </ul>
-
-                        {/* Get a Quote Action Button */}
-                        <div className="pt-2">
-                            <Link
-                                href={data.getInTouch.actionButton.href}
-                                onClick={handleFooterLinkClick}
-                                className="w-full flex items-center justify-between bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-400 hover:from-blue-500 hover:to-cyan-300 text-white py-3 px-5 rounded-full shadow-lg shadow-blue-600/30 group transition-all duration-300 cursor-pointer"
-                            >
-                                <span className="text-sm lg:text-base tracking-wide font-medium">{data.getInTouch.actionButton.label}</span>
-                                <div className="w-7 h-7 rounded-full bg-white flex items-center justify-center group-hover:translate-x-1 transition-transform">
-                                    <ButtonIcon className="w-4 h-4 text-blue-700" />
-                                </div>
-                            </Link>
-                        </div>
                     </div>
 
                 </div>
@@ -216,20 +201,9 @@ export default function Footer() {
 
             {/* Bottom Copyright Bar */}
             <div className="border-t border-blue-900/50 py-8 relative z-10">
-                <div className="max-w-[1350px] w-full mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-400">
+                <div className="max-w-[1350px] w-full mx-auto px-4 flex items-center justify-center text-center text-sm text-gray-400">
                     <div>
                         {data.bottomBar.copyright}
-                    </div>
-
-                    <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
-                        {data.bottomBar.links.map((link, idx) => (
-                            <React.Fragment key={link.label}>
-                                {idx > 0 && <span className="text-blue-800">|</span>}
-                                <Link href={link.href} onClick={handleFooterLinkClick} className="hover:text-cyan-300 transition-colors">
-                                    {link.label}
-                                </Link>
-                            </React.Fragment>
-                        ))}
                     </div>
                 </div>
             </div>

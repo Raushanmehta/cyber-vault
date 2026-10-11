@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import {
     Bug,
@@ -39,12 +40,13 @@ interface ServiceSectionProps {
 
 export default function ServicesSection({ data: propData, onEnquireClick }: ServiceSectionProps = {}) {
     const data = propData || siteMap.services;
+    const router = useRouter();
 
     const handleCardClick = (service: ServiceItem) => {
         if (onEnquireClick) {
             onEnquireClick(service.title);
-        } else if (typeof window !== 'undefined') {
-            window.location.href = `/services/${service.id}`;
+        } else {
+            router.push(`/services/${service.id}`);
         }
     };
 

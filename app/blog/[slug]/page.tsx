@@ -25,8 +25,8 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
     return (
         <main>
             <PageTopSection
-                title={postTitle}
-                breadcrumbCurrent={postTitle}
+                title={"Blog Detail"}
+                breadcrumbCurrent={"Blog Detail"}
                 breadcrumbHome="Home"
             />
             <BlogDetailSection data={blogData} initialSlug={slug} />

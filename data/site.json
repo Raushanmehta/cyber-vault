@@ -1631,25 +1631,8 @@
               }
             },
             "bottomBar": {
-              "copyright": "© 2026 Haircarft. All Rights Reserved. Powered by Lestow",
-              "links": [
-                {
-                  "label": "Privacy Policy",
-                  "href": "/contact"
-                },
-                {
-                  "label": "Terms & Conditions",
-                  "href": "/contact"
-                },
-                {
-                  "label": "About Us",
-                  "href": "/about"
-                },
-                {
-                  "label": "Contact",
-                  "href": "/contact"
-                }
-              ]
+              "copyright": "© 2026 CyberVault . All Rights Reserved. Powered by Lestow",
+              "links": []
             }
           }
         }

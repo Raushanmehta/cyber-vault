@@ -1,8 +1,18 @@
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { ArrowRight, Bug, Search, Flame, Database, Lock, Cloud, ShieldCheck, Settings } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import type { ServiceItem } from '@/sections/home/ServiceSection';
+
+const servicePngIcons: Record<string, string> = {
+    'threat-detection': '/icons/services/threat-detection.png',
+    'endpoint-security': '/icons/services/endpoint-security.png',
+    'network-defense': '/icons/services/network-defense.png',
+    'data-encryption': '/icons/services/data-encryption.png',
+    'cloud-security': '/icons/services/cloud-security.png',
+    'incident-response': '/icons/services/incident-response.png',
+};
 
 interface ServiceCardProps {
     service: ServiceItem;
@@ -50,28 +60,15 @@ export default function ServiceCard({ service, index, handleCardClick }: Service
                     ? 'bg-white text-blue-600 border-transparent shadow-md'
                     : 'bg-blue-50 text-blue-600 border border-blue-100 group-hover:bg-white group-hover:text-blue-600 group-hover:border-transparent group-hover:shadow-md'
                     }`}>
-                    {service.id === 'threat-detection' ? (
-                        <div className="relative">
-                            <Bug className="w-8 h-8 lg:w-10 lg:h-10 stroke-[2.2]" />
-                            <Search className="w-3.5 h-3.5 text-blue-700 absolute -bottom-1 -right-1" />
-                        </div>
-                    ) : service.id === 'network-defense' ? (
-                        <div className="relative">
-                            <Flame className="w-8 h-8 lg:w-10 lg:h-10 stroke-[2.2] text-blue-600" />
-                        </div>
-                    ) : service.id === 'data-encryption' ? (
-                        <div className="relative">
-                            <Database className="w-8 h-8 lg:w-10 lg:h-10 stroke-[2.2]" />
-                            <Lock className="w-3.5 h-3.5 text-blue-700 absolute bottom-0 right-0" />
-                        </div>
-                    ) : service.id === 'cloud-security' ? (
-                        <div className="relative">
-                            <Cloud className="w-8 h-8 lg:w-10 lg:h-10 stroke-[2.2]" />
-                            <ShieldCheck className="w-3.5 h-3.5 text-blue-700 absolute bottom-0 right-0" />
-                        </div>
-                    ) : service.id === 'incident-response' ? (
-                        <div className="relative">
-                            <Settings className="w-8 h-8 lg:w-10 lg:h-10 stroke-[2.2]" />
+                    {servicePngIcons[service.id] ? (
+                        <div className="relative w-8 h-8 lg:w-16 lg:h-16 flex items-center justify-center">
+                            <Image
+                                src={servicePngIcons[service.id]}
+                                alt={service.title}
+                                width={64}
+                                height={64}
+                                className="w-full h-full object-contain"
+                            />
                         </div>
                     ) : (
                         <IconComponent className="w-8 h-8 lg:w-10 lg:h-10 stroke-[2.2]" />
@@ -82,19 +79,27 @@ export default function ServiceCard({ service, index, handleCardClick }: Service
                 <div className="flex-1 min-w-0">
                     {/* Header Row: Title on Left, Arrow on Right */}
                     <div className="flex items-start justify-between gap-3 mb-2.5">
-                        <h3 className={`text-base sm:text-lg  leading-snug tracking-tight transition-colors duration-300 ${service.isHighlighted
+                        <h3 className={`text-base sm:text-lg leading-snug tracking-tight transition-colors duration-300 ${service.isHighlighted
                             ? 'text-white'
                             : 'text-slate-900 group-hover:text-white'
                             }`}>
-                            {service.title}
+                            <Link
+                                href={`/services/${service.id}`}
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                }}
+                            >
+                                {service.title}
+                            </Link>
                         </h3>
 
                         {/* Circular Action Arrow Button */}
                         <Link
-                            href="/blog"
+                            href={`/services/${service.id}`}
                             onClick={(e) => {
                                 e.stopPropagation();
                             }}
+                            aria-label={`View details for ${service.title}`}
                             className={`w-8 h-8 sm:w-9 sm:h-9 rounded-full shrink-0 flex items-center justify-center transition-all duration-300 group-hover:scale-110 cursor-pointer ${service.isHighlighted
                                 ? 'bg-white text-blue-600 shadow-md group-hover:bg-cyan-300'
                                 : 'bg-blue-600 text-white shadow-md shadow-blue-600/30 group-hover:bg-white group-hover:text-blue-600'

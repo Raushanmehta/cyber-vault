@@ -12,7 +12,6 @@ import {
     Sparkles,
 } from "lucide-react";
 import AnimatedHeading from "@/components/common/AnimatedHeading";
-import Image from "next/image";
 import { siteMap, type CyberVaultGetAQuoteData } from "@/data";
 
 const quoteIconMap: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -312,20 +311,6 @@ export default function GetAQuoteSection({ data: propData }: GetAQuoteSectionPro
                                 })}
                             </div>
                         </div>
-
-                        {/* Bottom Cyber Security Image Container */}
-                        <motion.div
-                            transition={{ duration: 0.3 }}
-                            className="group relative w-full h-[220px] sm:h-[260px] rounded-xl overflow-hidden border border-slate-200/80 shadow-md cursor-pointer"
-                        >
-                            <Image
-                                src={data.benefits.image.src}
-                                alt={data.benefits.image.alt}
-                                fill
-                                sizes="(max-width: 1024px) 100vw, 500px"
-                                className="object-cover transition-transform duration-700"
-                            />
-                        </motion.div>
                     </motion.div>
                 </div>
             </div>

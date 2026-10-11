@@ -11,7 +11,7 @@ export default function AboutPage() {
     return (
         <main>
             <PageTopSection title="About Us" breadcrumbCurrent="About Us" breadcrumbHome="Home" />
-            <AboutSection data={about} />
+            <AboutSection data={about} showActionButton={false} />
             <OurImpactSection data={ourImpact} />
             <WhyChooseUsSection data={whyChooseUs} />
             <TestimonialSection data={testimonial} />

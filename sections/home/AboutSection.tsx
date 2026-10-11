@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ShieldCheck, Settings, Users, ArrowRight } from 'lucide-react';
+import { useRouter, usePathname } from 'next/navigation';
 import AnimatedHeading from '@/components/common/AnimatedHeading';
 import { siteMap, type CyberVaultAboutData } from '@/data';
 import Image from 'next/image';
@@ -17,18 +18,27 @@ const aboutIconMap: Record<string, React.ComponentType<{ className?: string }>> 
 interface AboutSectionProps {
     data?: CyberVaultAboutData;
     onLearnMoreClick?: () => void;
+    showActionButton?: boolean;
 }
 
-export default function AboutSection({ data: propData, onLearnMoreClick }: AboutSectionProps = {}) {
+export default function AboutSection({
+    data: propData,
+    onLearnMoreClick,
+    showActionButton,
+}: AboutSectionProps = {}) {
     const data = propData || siteMap.about;
+    const pathname = usePathname();
+    const router = useRouter();
     const BadgeIcon = aboutIconMap[data.experienceBadge.icon] || ShieldCheck;
     const ActionIcon = aboutIconMap[data.actionButton.icon] || ArrowRight;
+
+    const shouldShowButton = showActionButton !== undefined ? showActionButton : pathname !== '/about';
 
     const handleButtonClick = () => {
         if (onLearnMoreClick) {
             onLearnMoreClick();
-        } else if (typeof window !== 'undefined') {
-            window.location.href = data.actionButton.href;
+        } else {
+            router.push(data.actionButton.href);
         }
     };
 
@@ -177,19 +187,21 @@ export default function AboutSection({ data: propData, onLearnMoreClick }: About
                         </div>
 
                         {/* Action Pill Button */}
-                        <div className="pt-2">
-                            <motion.button
-                                onClick={handleButtonClick}
-                                whileHover={{ scale: 1.04, boxShadow: "0 10px 25px -5px rgba(37, 99, 235, 0.4)" }}
-                                whileTap={{ scale: 0.96 }}
-                                className="group inline-flex items-center space-x-4 bg-gradient-to-r from-blue-700 via-blue-600 to-indigo-600 hover:from-blue-600 hover:to-indigo-500 text-white py-3.5 px-7 rounded-full shadow-lg shadow-blue-600/30 transition-all duration-300 cursor-pointer"
-                            >
-                                <span className="text-base tracking-wide pl-1">{data.actionButton.label}</span>
-                                <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-blue-600 group-hover:translate-x-1 transition-transform duration-300 shadow-md">
-                                    <ActionIcon className="w-4 h-4 text-blue-600 stroke-[2.5]" />
-                                </div>
-                            </motion.button>
-                        </div>
+                        {shouldShowButton && (
+                            <div className="pt-2">
+                                <motion.button
+                                    onClick={handleButtonClick}
+                                    whileHover={{ scale: 1.04, boxShadow: "0 10px 25px -5px rgba(37, 99, 235, 0.4)" }}
+                                    whileTap={{ scale: 0.96 }}
+                                    className="group inline-flex items-center space-x-4 bg-gradient-to-r from-blue-700 via-blue-600 to-indigo-600 hover:from-blue-600 hover:to-indigo-500 text-white py-3.5 px-7 rounded-full shadow-lg shadow-blue-600/30 transition-all duration-300 cursor-pointer"
+                                >
+                                    <span className="text-base tracking-wide pl-1">{data.actionButton.label}</span>
+                                    <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-blue-600 group-hover:translate-x-1 transition-transform duration-300 shadow-md">
+                                        <ActionIcon className="w-4 h-4 text-blue-600 stroke-[2.5]" />
+                                    </div>
+                                </motion.button>
+                            </div>
+                        )}
 
                     </motion.div>
 

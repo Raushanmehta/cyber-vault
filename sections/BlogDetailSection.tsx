@@ -9,8 +9,6 @@ import {
     User,
     Clock,
     Quote,
-    ChevronRight,
-    ArrowRight,
     Check,
 } from "lucide-react";
 import { siteMap, type CyberVaultBlogData } from "@/data";
@@ -48,14 +46,6 @@ export default function BlogDetailSection({
 }: BlogDetailSectionProps = {}) {
     const blogData = propData || siteMap.blog;
     const blogPosts = blogData.blogPosts || [];
-    const categories = blogData.categories || [
-        { name: "Cyber Security", count: 12 },
-        { name: "Data Protection", count: 8 },
-        { name: "Cloud Security", count: 10 },
-        { name: "Network Security", count: 7 },
-        { name: "Compliance", count: 5 },
-        { name: "Incident Response", count: 9 },
-    ];
 
     const [activeSlug, setActiveSlug] = useState<string>(() => {
         if (initialSlug && blogPosts.some((p) => p.slug === initialSlug || String(p.id) === initialSlug)) {
@@ -74,16 +64,6 @@ export default function BlogDetailSection({
         blogPosts.find((p) => p.slug === activeSlug || String(p.id) === activeSlug) ||
         blogPosts[0];
 
-    const [activeCategory, setActiveCategory] = useState<string>(
-        currentPost?.category || "Cyber Security"
-    );
-
-    useEffect(() => {
-        if (currentPost?.category) {
-            setActiveCategory(currentPost.category);
-        }
-    }, [currentPost]);
-
     if (!currentPost) {
         return null;
     }
@@ -93,14 +73,6 @@ export default function BlogDetailSection({
         setActiveSlug(targetSlug);
         if (typeof window !== "undefined") {
             window.history.pushState(null, "", `/blog/${targetSlug}`);
-        }
-    };
-
-    const handleCategoryClick = (categoryName: string) => {
-        setActiveCategory(categoryName);
-        const matchingPost = blogPosts.find((p) => p.category === categoryName);
-        if (matchingPost) {
-            handlePostSelect(matchingPost.slug || matchingPost.id);
         }
     };
 
@@ -354,47 +326,6 @@ export default function BlogDetailSection({
                             <CTACard />
                         </motion.div>
 
-                        {/* Widget 3: Categories List */}
-                        <motion.div
-                            variants={fadeInRight}
-                            initial="hidden"
-                            animate="visible"
-                            transition={{ delay: 0.2 }}
-                            className="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm space-y-4"
-                        >
-                            <div>
-                                <h3 className="text-xl sm:text-2xl font-bold text-[#091122]">Categories</h3>
-                                <span className="block w-12 h-[2.5px] bg-blue-600 mt-1.5 rounded-full" />
-                            </div>
-
-                            <div className="space-y-1.5">
-                                {categories.map((cat, idx) => {
-                                    const isActive = activeCategory === cat.name;
-                                    return (
-                                        <motion.button
-                                            key={idx}
-                                            whileHover={{ x: 4 }}
-                                            whileTap={{ scale: 0.98 }}
-                                            onClick={() => handleCategoryClick(cat.name)}
-                                            className={`w-full flex items-center justify-between px-4 py-3 rounded-xl text-sm lg:text-base transition-all duration-200 cursor-pointer ${isActive
-                                                ? "bg-gradient-to-r from-[#edf4ff] to-[#f4f8ff] text-blue-600 font-bold border-l-4 border-blue-600 shadow-xs"
-                                                : "text-slate-600 hover:bg-slate-50 hover:text-blue-600"
-                                                }`}
-                                        >
-                                            <span>{cat.name}</span>
-                                            <div className="flex items-center space-x-2">
-                                                {cat.count && (
-                                                    <span className="text-xs px-2 py-0.5 rounded-full bg-slate-100 text-slate-500">
-                                                        {cat.count}
-                                                    </span>
-                                                )}
-                                                <ChevronRight className="w-4 h-4 text-slate-400" />
-                                            </div>
-                                        </motion.button>
-                                    );
-                                })}
-                            </div>
-                        </motion.div>
 
                     </aside>
 

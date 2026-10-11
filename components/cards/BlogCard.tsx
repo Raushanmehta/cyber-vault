@@ -48,20 +48,23 @@ export default function BlogCard({ post, index, setSelectedPost }: BlogCardProps
             <img
                 src={post.image}
                 alt={post.title}
-                className="absolute inset-0 w-full h-full object-cover "
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
 
-            {/* Gradient Dark Overlay (Animates Down-to-Top on Hover) */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#162556] via-[#162556]/70 to-transparent translate-y-full group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out pointer-events-none" />
+            {/* Light Black Gradient Overlay behind text for enhanced contrast and readability */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/50 to-transparent pointer-events-none" />
 
-            {/* Card Content Overlay (Animates Down-to-Top on Hover) */}
+            {/* Gradient Overlay on Hover */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#162556]/90 via-[#162556]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out pointer-events-none" />
+
+            {/* Card Content Overlay */}
             <div className="relative z-10 p-7 sm:p-8 flex flex-col justify-end h-full transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500 ease-out">
                 {/* Date Badge */}
-                <div className="flex items-center space-x-2 text-blue-400 font-medium text-xs sm:text-sm mb-3">
-                    <div className="w-6 h-6 rounded-md bg-blue-600/30 backdrop-blur-md flex items-center justify-center">
-                        <Calendar className="w-3.5 h-3.5 text-blue-400" />
+                <div className="flex items-center space-x-2 text-white font-medium text-xs sm:text-sm mb-3">
+                    <div className="w-6 h-6 rounded-md bg-white/20 backdrop-blur-md flex items-center justify-center">
+                        <Calendar className="w-3.5 h-3.5 text-white" />
                     </div>
-                    <span>{post.date}</span>
+                    <span className="text-white drop-shadow-sm">{post.date}</span>
                 </div>
 
                 {/* Title and Arrow Action Button Row */}
