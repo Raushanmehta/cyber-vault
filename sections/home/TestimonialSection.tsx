@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import Autoplay from "embla-carousel-autoplay";
 import TestimonialCard from "@/components/cards/TestimonialCard";
 import {
@@ -23,33 +23,44 @@ export default function TestimonialSection({ data: propData }: TestimonialSectio
     const [current, setCurrent] = useState(0);
     const [count, setCount] = useState(0);
 
-    const autoplayPlugin = useRef(
-        Autoplay({ delay: 3500, stopOnInteraction: false })
+    const autoplayPlugin = useMemo(
+        () => Autoplay({ delay: 3500, stopOnInteraction: false }),
+        []
     );
 
     useEffect(() => {
         if (!api) return;
-        setCount(api.scrollSnapList().length);
-        setCurrent(api.selectedScrollSnap());
 
-        api.on("select", () => {
+        const updateSnap = () => {
+            setCount(api.scrollSnapList().length);
             setCurrent(api.selectedScrollSnap());
-        });
+        };
+
+        const onSelect = () => {
+            setCurrent(api.selectedScrollSnap());
+        };
+
+        api.on("select", onSelect);
+        api.on("reInit", updateSnap);
+        queueMicrotask(updateSnap);
+
+        return () => {
+            api.off("select", onSelect);
+            api.off("reInit", updateSnap);
+        };
     }, [api]);
 
     return (
         <section className="relative w-full bg-[#f8fbff] py-8 lg:py-14 overflow-hidden font-sans">
             <div className="max-w-[1380px] lg:w-[97%] xl:w-[95%] w-full mx-auto px-4">
-                {/* Section Tagline */}
                 <div className="flex items-center justify-center space-x-3 mb-3">
-                    <span className="w-12 h-[2px] bg-gradient-to-r from-transparent to-blue-600 rounded-full"></span>
+                    <span className="w-12 h-[2px] bg-gradient-to-r from-transparent to-blue-600 rounded-full" />
                     <span className="text-xs sm:text-sm font-bold tracking-wider text-blue-900 uppercase">
                         {data.tagline}
                     </span>
-                    <span className="w-12 h-[2px] bg-gradient-to-l from-transparent to-blue-600 rounded-full"></span>
+                    <span className="w-12 h-[2px] bg-gradient-to-l from-transparent to-blue-600 rounded-full" />
                 </div>
 
-                {/* Section Heading */}
                 <h2 className="text-center text-3xl sm:text-4xl lg:text-5xl text-[#091122] tracking-tight mb-2">
                     {data.title.prefix}{" "}
                     <span className="bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">
@@ -57,16 +68,14 @@ export default function TestimonialSection({ data: propData }: TestimonialSectio
                     </span>
                 </h2>
 
-                {/* Subtitle */}
                 <p className="text-center text-slate-500 max-w-3xl mx-auto text-sm lg:text-base mb-4">
                     {data.description}
                 </p>
 
-                {/* Carousel Container */}
-                <div className="relative  lg:mt-2">
+                <div className="relative lg:mt-2">
                     <Carousel
                         setApi={setApi}
-                        plugins={[autoplayPlugin.current]}
+                        plugins={[autoplayPlugin]}
                         opts={{
                             align: "start",
                             loop: true,

@@ -14,22 +14,15 @@ export function generateStaticParams() {
 
 export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
     const { slug } = await params;
-    const blogData = siteMap.blog;
-    const currentPost =
-        blogData.blogPosts.find(
-            (p) => p.slug === slug || String(p.id) === slug
-        ) || blogData.blogPosts[0];
-
-    const postTitle = currentPost?.title || "Blog Detail";
 
     return (
         <main>
             <PageTopSection
-                title={"Blog Detail"}
-                breadcrumbCurrent={"Blog Detail"}
+                title="Blog Detail"
+                breadcrumbCurrent="Blog Detail"
                 breadcrumbHome="Home"
             />
-            <BlogDetailSection data={blogData} initialSlug={slug} />
+            <BlogDetailSection data={siteMap.blog} initialSlug={slug} />
         </main>
     );
 }

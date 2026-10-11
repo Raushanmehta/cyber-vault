@@ -1,8 +1,7 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import {
     Calendar,
@@ -15,25 +14,12 @@ import { siteMap, type CyberVaultBlogData } from "@/data";
 import CTACard from "@/components/cards/CtaCard";
 import {
     fadeInUp,
-    fadeInLeft,
     fadeInRight,
-    staggerContainer,
-    staggerItem,
-    cardHover,
     scaleIn,
-    zoomIn,
     ambientGlowPulse,
     transitions,
 } from "@/utils/animations";
 
-function sanitizeImageUrl(src?: string): string {
-    if (!src) return "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=1200";
-    const trimmed = src.trim();
-    if (trimmed.startsWith("http://") || trimmed.startsWith("https://") || trimmed.startsWith("/")) {
-        return trimmed;
-    }
-    return `/${trimmed}`;
-}
 
 interface BlogDetailSectionProps {
     data?: CyberVaultBlogData;
@@ -47,18 +33,13 @@ export default function BlogDetailSection({
     const blogData = propData || siteMap.blog;
     const blogPosts = blogData.blogPosts || [];
 
-    const [activeSlug, setActiveSlug] = useState<string>(() => {
-        if (initialSlug && blogPosts.some((p) => p.slug === initialSlug || String(p.id) === initialSlug)) {
-            return initialSlug;
-        }
-        return blogPosts[0]?.slug || String(blogPosts[0]?.id) || "1";
-    });
-
-    useEffect(() => {
-        if (initialSlug && blogPosts.some((p) => p.slug === initialSlug || String(p.id) === initialSlug)) {
-            setActiveSlug(initialSlug);
-        }
-    }, [initialSlug, blogPosts]);
+    const [selectedSlug, setSelectedSlug] = useState<string | null>(null);
+    const activeSlug =
+        (selectedSlug && blogPosts.some((p) => p.slug === selectedSlug || String(p.id) === selectedSlug) ? selectedSlug : null) ||
+        (initialSlug && blogPosts.some((p) => p.slug === initialSlug || String(p.id) === initialSlug) ? initialSlug : null) ||
+        blogPosts[0]?.slug ||
+        String(blogPosts[0]?.id) ||
+        "1";
 
     const currentPost =
         blogPosts.find((p) => p.slug === activeSlug || String(p.id) === activeSlug) ||
@@ -70,19 +51,17 @@ export default function BlogDetailSection({
 
     const handlePostSelect = (slugOrId: string | number) => {
         const targetSlug = String(slugOrId);
-        setActiveSlug(targetSlug);
+        setSelectedSlug(targetSlug);
         if (typeof window !== "undefined") {
             window.history.pushState(null, "", `/blog/${targetSlug}`);
         }
     };
 
-    // Filter recent posts (excluding current post if multiple available)
     const recentPosts = blogPosts.filter((p) => p.id !== currentPost.id).slice(0, 4);
     const displayRecentPosts = recentPosts.length > 0 ? recentPosts : blogPosts.slice(0, 4);
 
     return (
         <section className="relative w-full bg-white py-8 lg:py-14 font-sans overflow-hidden">
-            {/* Ambient Background Glows */}
             <motion.div
                 animate={ambientGlowPulse.animate}
                 transition={ambientGlowPulse.transition}
@@ -96,8 +75,6 @@ export default function BlogDetailSection({
 
             <div className="max-w-[1380px] lg:w-[97%] xl:w-[95%] w-full mx-auto px-4">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-
-                    {/* ================= MAIN ARTICLE COLUMN (8 Cols) ================= */}
                     <div className="lg:col-span-8">
                         <AnimatePresence mode="wait">
                             <motion.article
@@ -108,7 +85,6 @@ export default function BlogDetailSection({
                                 transition={transitions.fast}
                                 className="space-y-6"
                             >
-                                {/* Tag / Category Badge */}
                                 <motion.div
                                     variants={fadeInUp}
                                     initial="hidden"
@@ -118,7 +94,6 @@ export default function BlogDetailSection({
                                     {currentPost.category || "Cyber Security"}
                                 </motion.div>
 
-                                {/* Article Main Title */}
                                 <motion.h1
                                     variants={fadeInUp}
                                     initial="hidden"
@@ -128,7 +103,6 @@ export default function BlogDetailSection({
                                     {currentPost.title}
                                 </motion.h1>
 
-                                {/* Metadata Row */}
                                 <motion.div
                                     variants={fadeInUp}
                                     initial="hidden"
@@ -149,7 +123,6 @@ export default function BlogDetailSection({
                                     </div>
                                 </motion.div>
 
-                                {/* Main Featured Image */}
                                 <motion.div
                                     variants={scaleIn}
                                     initial="hidden"
@@ -157,7 +130,7 @@ export default function BlogDetailSection({
                                     className="relative w-full h-[320px] sm:h-[440px] rounded-2xl overflow-hidden shadow-md group"
                                 >
                                     <Image
-                                        src={sanitizeImageUrl(currentPost.image)}
+                                        src={currentPost.image}
                                         alt={currentPost.title}
                                         fill
                                         unoptimized
@@ -168,7 +141,6 @@ export default function BlogDetailSection({
                                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent pointer-events-none" />
                                 </motion.div>
 
-                                {/* Intro Paragraph */}
                                 <motion.p
                                     variants={fadeInUp}
                                     initial="hidden"
@@ -178,7 +150,6 @@ export default function BlogDetailSection({
                                     {currentPost.content?.intro || currentPost.excerpt}
                                 </motion.p>
 
-                                {/* Article Body Sections */}
                                 {currentPost.content?.sections && currentPost.content.sections.length > 0 ? (
                                     <div className="space-y-6">
                                         {currentPost.content.sections.map((section, idx) => (
@@ -196,7 +167,6 @@ export default function BlogDetailSection({
                                                     {section.paragraph}
                                                 </p>
 
-                                                {/* Optional Checklist and Inset Secondary Image */}
                                                 {(section.checklist || section.secondaryImage) && (
                                                     <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center pt-3">
                                                         {section.checklist && (
@@ -215,7 +185,7 @@ export default function BlogDetailSection({
                                                         {section.secondaryImage && (
                                                             <div className="md:col-span-5 relative h-[190px] sm:h-[220px] rounded-xl overflow-hidden shadow-sm group">
                                                                 <Image
-                                                                    src={sanitizeImageUrl(section.secondaryImage)}
+                                                                    src={section.secondaryImage}
                                                                     alt={section.title}
                                                                     fill
                                                                     unoptimized
@@ -237,7 +207,6 @@ export default function BlogDetailSection({
                                     </div>
                                 )}
 
-                                {/* Featured Pull Quote Block */}
                                 {currentPost.content?.quote && (
                                     <motion.div
                                         variants={fadeInUp}
@@ -252,7 +221,6 @@ export default function BlogDetailSection({
                                     </motion.div>
                                 )}
 
-                                {/* Conclusion */}
                                 {currentPost.content?.conclusion && (
                                     <motion.div
                                         variants={fadeInUp}
@@ -269,10 +237,7 @@ export default function BlogDetailSection({
                         </AnimatePresence>
                     </div>
 
-                    {/* ================= RIGHT SIDEBAR (4 Cols) ================= */}
                     <aside className="lg:col-span-4 space-y-6">
-
-                        {/* Widget 1: Recent Posts */}
                         <motion.div
                             variants={fadeInRight}
                             initial="hidden"
@@ -294,7 +259,7 @@ export default function BlogDetailSection({
                                     >
                                         <div className="w-24 h-20 rounded-xl overflow-hidden shrink-0 relative shadow-xs">
                                             <Image
-                                                src={sanitizeImageUrl(post.image)}
+                                                src={post.image}
                                                 alt={post.title}
                                                 fill
                                                 unoptimized
@@ -316,7 +281,6 @@ export default function BlogDetailSection({
                             </div>
                         </motion.div>
 
-                        {/* Widget 2: CTA Card */}
                         <motion.div
                             variants={fadeInUp}
                             initial="hidden"
@@ -325,10 +289,7 @@ export default function BlogDetailSection({
                         >
                             <CTACard />
                         </motion.div>
-
-
                     </aside>
-
                 </div>
             </div>
         </section>

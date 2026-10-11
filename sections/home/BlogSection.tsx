@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ArrowRight } from "lucide-react";
@@ -28,12 +29,24 @@ export default function BlogSection({ data: propData }: BlogSectionProps = {}) {
 
     useEffect(() => {
         if (!api) return;
-        setCount(api.scrollSnapList().length);
-        setCurrent(api.selectedScrollSnap());
 
-        api.on("select", () => {
+        const updateSnap = () => {
+            setCount(api.scrollSnapList().length);
             setCurrent(api.selectedScrollSnap());
-        });
+        };
+
+        const onSelect = () => {
+            setCurrent(api.selectedScrollSnap());
+        };
+
+        api.on("select", onSelect);
+        api.on("reInit", updateSnap);
+        queueMicrotask(updateSnap);
+
+        return () => {
+            api.off("select", onSelect);
+            api.off("reInit", updateSnap);
+        };
     }, [api]);
 
     return (
@@ -137,10 +150,12 @@ export default function BlogSection({ data: propData }: BlogSectionProps = {}) {
                             </button>
 
                             <div className="h-64 relative">
-                                <img
+                                <Image
                                     src={selectedPost.image}
                                     alt={selectedPost.title}
-                                    className="w-full h-full object-cover"
+                                    fill
+                                    sizes="(max-width: 768px) 100vw, 672px"
+                                    className="object-cover"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent" />
                                 <div className="absolute bottom-4 left-6 text-white">

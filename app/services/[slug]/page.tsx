@@ -14,20 +14,15 @@ export function generateStaticParams() {
 
 export default async function ServiceDetailPage({ params }: ServiceDetailPageProps) {
     const { slug } = await params;
-    const services = siteMap.services;
-    const currentService =
-        services.servicesList.find((s) => s.id === slug) || services.servicesList[0];
-
-    const serviceTitle = currentService?.title || "Service Detail";
 
     return (
         <main>
             <PageTopSection
-                title={serviceTitle}
-                breadcrumbCurrent={serviceTitle}
+                title="Service Detail"
+                breadcrumbCurrent="Service Detail"
                 breadcrumbHome="Home"
             />
-            <ServiceDetailSection data={services} initialServiceId={slug} />
+            <ServiceDetailSection data={siteMap.services} initialServiceId={slug} />
         </main>
     );
 }

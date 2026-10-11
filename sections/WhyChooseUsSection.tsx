@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { CheckCircle2, Award, Sparkles } from "lucide-react";
 import { LuShieldHalf } from "react-icons/lu";
@@ -173,29 +174,31 @@ export default function WhyChooseUsSection({ data: propData }: WhyChooseUsSectio
                         transition={{ duration: 0.6 }}
                         className="lg:col-span-5 relative grid grid-cols-2 gap-4"
                     >
-                        {/* Left Main Tall Image */}
                         <motion.div
                             transition={{ duration: 0.3 }}
                             className="group relative rounded-3xl overflow-hidden shadow-xl h-[460px] sm:h-[600px] cursor-pointer"
                         >
-                            <img
+                            <Image
                                 src={data.images.mainTall.src}
                                 alt={data.images.mainTall.alt}
-                                className="w-full h-full object-cover transition-transform duration-700"
+                                fill
+                                sizes="(max-width: 1024px) 50vw, 300px"
+                                className="object-cover transition-transform duration-700"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 via-transparent to-transparent pointer-events-none" />
                         </motion.div>
 
-                        {/* Right Stacked 2 Images */}
                         <div className="space-y-4 flex flex-col justify-end h-[460px] sm:h-[600px]">
                             <motion.div
                                 transition={{ duration: 0.3 }}
                                 className="group relative rounded-2xl overflow-hidden shadow-md h-[220px] sm:h-[260px] cursor-pointer"
                             >
-                                <img
+                                <Image
                                     src={data.images.stackedTop.src}
                                     alt={data.images.stackedTop.alt}
-                                    className="w-full h-full object-cover transition-transform duration-700 ease-out"
+                                    fill
+                                    sizes="(max-width: 1024px) 50vw, 300px"
+                                    className="object-cover transition-transform duration-700 ease-out"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/30 via-transparent to-transparent pointer-events-none" />
                             </motion.div>
@@ -204,10 +207,12 @@ export default function WhyChooseUsSection({ data: propData }: WhyChooseUsSectio
                                 transition={{ duration: 0.3 }}
                                 className="group relative rounded-2xl overflow-hidden shadow-md h-[220px] sm:h-[260px] cursor-pointer"
                             >
-                                <img
+                                <Image
                                     src={data.images.stackedBottom.src}
                                     alt={data.images.stackedBottom.alt}
-                                    className="w-full h-full object-cover transition-transform duration-700 ease-out"
+                                    fill
+                                    sizes="(max-width: 1024px) 50vw, 300px"
+                                    className="object-cover transition-transform duration-700 ease-out"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/30 via-transparent to-transparent pointer-events-none" />
                             </motion.div>

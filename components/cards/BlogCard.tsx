@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Calendar } from "lucide-react";
@@ -40,26 +41,22 @@ export default function BlogCard({ post, index, setSelectedPost }: BlogCardProps
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-
+            transition={{ duration: 0.5, delay: (index % 4) * 0.1 }}
             onClick={() => setSelectedPost?.(post)}
-            className="group relative h-[300px] lg:h-[360px] rounded-xl overflow-hidden cursor-pointer  transition-all duration-500 flex flex-col justify-end border border-transparent hover:border-cyan-400/40"
+            className="group relative h-[300px] lg:h-[360px] rounded-xl overflow-hidden cursor-pointer transition-all duration-500 flex flex-col justify-end border border-transparent hover:border-cyan-400/40"
         >
-            {/* Background Image with Zoom on Hover */}
-            <img
+            <Image
                 src={post.image}
                 alt={post.title}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
             />
 
-            {/* Light Black Gradient Overlay behind text for enhanced contrast and readability */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/50 to-transparent pointer-events-none" />
-
-            {/* Gradient Overlay on Hover */}
             <div className="absolute inset-0 bg-gradient-to-t from-[#162556]/90 via-[#162556]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out pointer-events-none" />
 
-            {/* Card Content Overlay */}
             <div className="relative z-10 p-7 sm:p-8 flex flex-col justify-end h-full transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500 ease-out">
-                {/* Date Badge */}
                 <div className="flex items-center space-x-2 text-white font-medium text-xs sm:text-sm mb-3">
                     <div className="w-6 h-6 rounded-md bg-white/20 backdrop-blur-md flex items-center justify-center">
                         <Calendar className="w-3.5 h-3.5 text-white" />
@@ -67,7 +64,6 @@ export default function BlogCard({ post, index, setSelectedPost }: BlogCardProps
                     <span className="text-white drop-shadow-sm">{post.date}</span>
                 </div>
 
-                {/* Title and Arrow Action Button Row */}
                 <div className="flex items-end justify-between space-x-4">
                     <h3 className="text-xl sm:text-2xl font-bold text-white leading-snug group-hover:text-blue-200 transition-colors duration-300 drop-shadow-[0_2px_10px_rgba(0,0,0,0.85)]">
                         {post.title}
@@ -84,5 +80,5 @@ export default function BlogCard({ post, index, setSelectedPost }: BlogCardProps
                 </div>
             </div>
         </motion.div>
-    )
+    );
 }
