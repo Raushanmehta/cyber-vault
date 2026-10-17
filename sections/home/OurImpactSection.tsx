@@ -69,7 +69,7 @@ export default function OurImpactSection({ data: propData }: OurImpactSectionPro
             <div
                 className="absolute inset-0 bg-cover bg-center opacity-25 pointer-events-none"
                 style={{
-                    backgroundImage: `url('${data.backgroundImage || '/images/our-impact-banner.png'}')`
+                    backgroundImage: `url('${data.backgroundImage || '/images/our-impact-banner.webp'}')`
                 }}
             />
             {/* Center Black Gradient (Behind text & icons, on top of image) */}
