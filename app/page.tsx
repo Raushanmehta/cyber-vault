@@ -11,7 +11,7 @@ export default function Home() {
   const { hero, about, ourImpact, services, process, testimonial, blog } = siteMap;
 
   return (
-    <>
+    <main>
       <HeroSection data={hero} />
       <AboutSection data={about} />
       <OurImpactSection data={ourImpact} />
@@ -19,6 +19,6 @@ export default function Home() {
       <ProcessSection data={process} />
       <TestimonialSection data={testimonial} />
       <BlogSection data={blog} />
-    </>
+    </main>
   );
 }

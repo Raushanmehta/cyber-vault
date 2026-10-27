@@ -42,7 +42,7 @@ export default function TopBar({
         <div className="hidden md:block w-full bg-gradient-to-r from-blue-950 via-blue-900 to-indigo-950 text-white text-xs sm:text-sm py-2.5 px-4 sm:px-8 border-b border-blue-800/40 shadow-sm relative z-50 font-sans">
             <div className="max-w-[1350px] mx-auto flex flex-col md:flex-row items-center justify-between gap-3 md:gap-0">
 
-                {/* Left: Notification Banner */}
+                {/* Notification banner */}
                 <div className="flex items-center space-x-2 text-center md:text-left flex-wrap justify-center md:justify-start">
                     <motion.div
                         whileHover={{ scale: 1.1, rotate: 5 }}
@@ -64,10 +64,10 @@ export default function TopBar({
                     </motion.a>
                 </div>
 
-                {/* Right: Contact Email & Social Media Links */}
+                {/* Contact info */}
                 <div className="flex items-center space-x-4 sm:space-x-6 text-gray-300">
 
-                    {/* Email Info */}
+                    {/* Email link */}
                     <motion.a
                         href={`mailto:${currentEmail}`}
                         whileHover={{ scale: 1.03 }}
@@ -77,10 +77,10 @@ export default function TopBar({
                         <span className="font-normal tracking-wide">{currentEmail}</span>
                     </motion.a>
 
-                    {/* Divider */}
+                    {/* Separator line */}
                     <div className="h-4 w-[1px] bg-blue-700/60 hidden sm:block" />
 
-                    {/* Social Media Icons */}
+                    {/* Social links */}
                     <div className="flex items-center space-x-3 sm:space-x-4">
                         {data.socialLinks.map((social) => {
                             const SocialIcon = iconMap[social.icon] || BsTwitter;

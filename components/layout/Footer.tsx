@@ -44,17 +44,17 @@ export default function Footer() {
 
     return (
         <footer className="relative bg-[#020617] text-white overflow-hidden font-sans border-t border-blue-900/40">
-            {/* Background Glowing Mesh Effects */}
+            {/* Glowing mesh */}
             <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none" />
             <div className="absolute bottom-0 right-10 w-[400px] h-[400px] bg-cyan-500/10 rounded-full blur-[100px] pointer-events-none" />
 
-            {/* Main Footer Container */}
+            {/* Main container */}
             <div className="max-w-[1380px] lg:w-[97%] xl:w-[95%] w-full mx-auto px-4 pt-16 pb-12 relative z-10">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 lg:gap-8">
 
-                    {/* Column 1: Brand Info */}
+                    {/* Brand column */}
                     <div className="lg:col-span-4 space-y-6">
-                        {/* Brand Logo Link */}
+                        {/* Logo link */}
                         <Link href={data.brand.logo.href} onClick={handleFooterLinkClick} className="inline-block">
                             <Image
                                 src={data.brand.logo.src}
@@ -66,12 +66,12 @@ export default function Footer() {
                             />
                         </Link>
 
-                        {/* Description */}
+                        {/* Brand description */}
                         <p className="text-gray-300 text-sm lg:text-base leading-relaxed max-w-sm">
                             {data.brand.description}
                         </p>
 
-                        {/* Social Media Icons */}
+                        {/* Social icons */}
                         <div className="flex items-center space-x-3 pt-2">
                             {data.brand.socialLinks.map((social) => {
                                 const Icon = footerIconMap[social.icon] || FaFacebook;
@@ -93,7 +93,7 @@ export default function Footer() {
                         </div>
                     </div>
 
-                    {/* Column 2: Quick Links */}
+                    {/* Quick links */}
                     <div className="lg:col-span-2 space-y-4">
                         <div className="relative pb-2 inline-block">
                             <h3 className="text-white font-medium text-xl">{data.quickLinks.title}</h3>
@@ -115,7 +115,7 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    {/* Column 3: Our Services Links */}
+                    {/* Services links */}
                     <div className="lg:col-span-2 space-y-4">
                         <div className="relative pb-2 inline-block">
                             <h3 className="text-white font-medium text-xl">{data.servicesLinks.title}</h3>
@@ -137,7 +137,7 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    {/* Column 4: Resources Links */}
+                    {/* Resource links */}
                     <div className="lg:col-span-2 space-y-4">
                         <div className="relative pb-2 inline-block">
                             <h3 className="text-white font-medium text-xl">{data.resourceLinks.title}</h3>
@@ -159,7 +159,7 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    {/* Column 5: Get in Touch */}
+                    {/* Contact info */}
                     <div className="lg:col-span-2 space-y-5">
                         <div className="relative pb-2 inline-block">
                             <h3 className="text-white font-medium text-xl">{data.getInTouch.title}</h3>
@@ -199,7 +199,7 @@ export default function Footer() {
                 </div>
             </div>
 
-            {/* Bottom Copyright Bar */}
+            {/* Copyright bar */}
             <div className="border-t border-blue-900/50 py-8 relative z-10">
                 <div className="max-w-[1350px] w-full mx-auto px-4 flex items-center justify-center text-center text-sm text-gray-400">
                     <div>

@@ -54,14 +54,14 @@ export default function Navbar({
         if (typeof window !== 'undefined') {
             const lenis = (window as unknown as { __lenis?: { scrollTo: (target: number, options?: { immediate?: boolean }) => void } }).__lenis;
             if (pathname === href) {
-                // If user clicks the current page, smooth scroll to the top
+                // Scroll top
                 if (lenis) {
                     lenis.scrollTo(0);
                 } else {
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                 }
             } else {
-                // Navigating to a different page: reset scroll immediately to 0
+                // Reset scroll
                 if (lenis) {
                     lenis.scrollTo(0, { immediate: true });
                 }
@@ -74,10 +74,10 @@ export default function Navbar({
     const ActionIcon = navIconMap[data.actionButton.icon] || ArrowRight;
 
     return (
-        <div className="w-full bg-white/95 backdrop-blur-md border-b border-slate-100 font-sans relative z-50">
+        <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-slate-100 font-sans shadow-xs">
             <div className="max-w-[1380px] lg:w-[97%] xl:w-[95%] w-full mx-auto px-4 h-20 flex items-center justify-between">
 
-                {/* 1. Logo Section */}
+                {/* Logo section */}
                 <Link
                     href={data.logo.href}
                     onClick={() => handleItemClick(data.logo.href)}
@@ -93,7 +93,7 @@ export default function Navbar({
                     />
                 </Link>
 
-                {/* 2. Desktop Navigation Links */}
+                {/* Desktop nav */}
                 <nav className="hidden lg:flex items-center space-x-1 xl:space-x-2">
                     {data.navItems.map((item) => {
                         const isActive = isItemActive(item.href);
@@ -120,7 +120,7 @@ export default function Navbar({
                     })}
                 </nav>
 
-                {/* 3. Action Button (Desktop) */}
+                {/* Action button */}
                 <div className="hidden sm:flex items-center">
                     <Link
                         href={data.actionButton.href}
@@ -137,7 +137,7 @@ export default function Navbar({
                     </Link>
                 </div>
 
-                {/* 4. Mobile Menu Toggle Button */}
+                {/* Mobile toggle */}
                 <div className="flex lg:hidden items-center">
                     <motion.button
                         whileTap={{ scale: 0.9 }}
@@ -151,11 +151,11 @@ export default function Navbar({
 
             </div>
 
-            {/* 5. Mobile Drawer & Dropdown */}
+            {/* Mobile menu */}
             <AnimatePresence>
                 {isOpen && (
                     <>
-                        {/* Backdrop */}
+                        {/* Backdrop overlay */}
                         <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
@@ -164,7 +164,7 @@ export default function Navbar({
                             className="fixed inset-0 top-20 bg-slate-900/40 backdrop-blur-xs z-40 lg:hidden"
                         />
 
-                        {/* Mobile Menu Content */}
+                        {/* Menu content */}
                         <motion.div
                             initial={{ opacity: 0, height: 0 }}
                             animate={{ opacity: 1, height: 'auto' }}
@@ -210,6 +210,6 @@ export default function Navbar({
                     </>
                 )}
             </AnimatePresence>
-        </div>
+        </header>
     );
 }

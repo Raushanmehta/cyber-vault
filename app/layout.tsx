@@ -29,10 +29,8 @@ export default function RootLayout({
       className={`${ramabhadra.variable} ${ramabhadra.className} h-full antialiased`}>
       <body className="min-h-full flex flex-col font-sans">
         <SmoothScroll>
-          <TopBar email="info@xyz.com" contactUrl="/contact" />
-          <header className="sticky top-0 z-50 w-full shadow-sm">
-            <Navbar />
-          </header>
+          <TopBar />
+          <Navbar />
           {children}
           <Footer />
         </SmoothScroll>
